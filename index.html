@@ -426,7 +426,7 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
   </div>
 
 </div>
-<div class="clay-credit" data-clay-credit="true">Sunboost Price Approval</div>
+<div class="clay-credit" data-clay-credit="true">Sunboost Price Approval Made by Clay</div>
 </div>
 
 <div id="mode-commercial" class="mode-panel">
@@ -552,7 +552,7 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
       <div class="note">References: PDRS Rule 2022 (Amendment No.2) 2026 · BESS4 Tiered Eq. 2A-C/3A-C, PDRC kept as continuous decimal (matches official BESS-4 PDRS Calculation methodology — no premature rounding) · NLF: Ausgrid 1.04, Essential 1.04, Endeavour 1.05 · Solar STC: ≤100kW deeming 6.8, 100-200kW split, &gt;200kW none · Battery STC: 3.5/kWh capped 50kWh (max 175), none &gt;100kWh · Freight $0.01/W, BOS $0.10/W, CDC $3,500.</div>
     </div>
   </div>
-  <div class="clay-credit" data-clay-credit="true">Sunboost Price Approval</div>
+  <div class="clay-credit" data-clay-credit="true">Sunboost Price Approval Made by Clay</div>
 </div>
 
 
@@ -1187,12 +1187,12 @@ function setMode(mode){
 }
 
 // ---------------------------------------------------------------
-// Credit footer protection — "Sunboost Price Approval" must stay on both the
+// Credit footer protection — "Sunboost Price Approval Made by Clay" must stay on both the
 // Residential and Commercial pages. This restores it automatically
 // if the element is deleted or its text is edited via dev tools.
 // ---------------------------------------------------------------
 (function(){
-  const CREDIT_TEXT = 'Sunboost Price Approval';
+  const CREDIT_TEXT = 'Sunboost Price Approval Made by Clay';
   const hosts = [
     document.getElementById('mode-residential'),
     document.getElementById('mode-commercial')
