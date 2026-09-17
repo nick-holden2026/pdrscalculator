@@ -41,7 +41,6 @@ input,select,textarea{width:100%;padding:7px 9px;border:1px solid var(--yellow-l
 input:focus,select:focus,textarea:focus{outline:2px solid var(--navy);outline-offset:1px;}
 input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-weight:700;}
 
-/* System components table-ish rows */
 .comp-head{display:grid;grid-template-columns:110px 1fr 70px 90px;gap:10px;font-size:9.5px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);font-weight:700;padding:0 2px 6px;}
 .comp-row{display:grid;grid-template-columns:110px 1fr 70px 90px;gap:10px;align-items:start;padding:9px 2px;border-top:1px solid var(--line);}
 .comp-row:first-of-type{border-top:none;}
@@ -58,7 +57,6 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
 .extra-line .elabel .auto{font-size:9px;color:var(--muted);font-weight:500;}
 .extra-line input{width:80px;padding:5px 7px;text-align:right;font-size:12px;}
 
-/* Right column tabs */
 .tabbar{display:flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:4px;margin-bottom:16px;position:sticky;top:16px;z-index:10;}
 .tabbtn{flex:1;text-align:center;padding:9px 8px;border-radius:7px;font-size:12.5px;font-weight:700;color:var(--muted);cursor:pointer;}
 .tabbtn.active{background:var(--navy);color:#fff;}
@@ -82,14 +80,12 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
 .kpi-sm .val.green{color:#1a7a4c;}
 .kpi-sm .sub{font-size:10px;color:var(--muted);}
 
-/* Breakdown list */
 .bd-row{display:flex;justify-content:space-between;padding:8px 4px;border-bottom:1px solid var(--line);font-size:12.5px;}
 .bd-row.total{font-weight:800;border-top:2px solid var(--navy);border-bottom:none;background:#eef4fa;padding:9px 6px;margin-top:2px;border-radius:0 0 6px 6px;}
 .bd-row.rebate{color:#1a7a4c;font-weight:600;}
 .bd-row.cash{font-weight:800;font-size:14px;color:#1a7a4c;border-bottom:none;padding-top:12px;}
 .bd-row.cash.negative{color:var(--red);}
 
-/* Approval tiles reused */
 .approval-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 .atile{background:#f7f9fb;border:1px solid var(--line);border-radius:9px;padding:9px 11px;}
 .atile .alabel{font-size:9px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);font-weight:700;margin-bottom:3px;}
@@ -101,19 +97,17 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
 .atile.hero.negative .alabel{color:#f2c4b5;}
 .approve-bar{display:flex;gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);}
 
-/* ---------- Approval price request box ---------- */
 .approval-price-box{background:#f7f9fb;border:2px solid var(--navy);border-radius:11px;padding:16px 18px;margin-top:14px;}
 .apb-title{font-size:12.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--navy);font-weight:800;margin-bottom:12px;}
 .apb-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:end;}
 .apb-field label{font-size:10px;text-transform:uppercase;letter-spacing:.3px;color:var(--muted);font-weight:700;margin-bottom:4px;display:block;}
 .apb-field input{width:100%;padding:9px 10px;border-radius:7px;font-size:14px;font-weight:700;}
 
-/* Legacy .apb-result kept for the commercial tab */
 .apb-result{background:#eef1f4;border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:15px;font-weight:800;color:var(--muted);}
 .apb-result.profit{background:#e7f6ef;border-color:#a8ddc4;color:#1a7a4c;}
 .apb-result.loss{background:#fdeeea;border-color:#f2b5a3;color:var(--red);}
 
-/* ---------- Enhanced approval result banner (residential) ---------- */
+/* ---- Enhanced approval result banner (residential) ---- */
 .apb-banner{
   margin-top:18px;
   padding:22px 26px;
@@ -148,40 +142,20 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
 }
 .apb-banner-detail b{ color:#0d3a63; }
 
-/* Profit state */
-.apb-banner.profit{
-  background:linear-gradient(120deg,#e7f6ef,#d2f0e0);
-  border-color:#1f8f72;
-}
+.apb-banner.profit{ background:linear-gradient(120deg,#e7f6ef,#d2f0e0); border-color:#1f8f72; }
 .apb-banner.profit .apb-banner-label{ color:#1a7a4c; }
 .apb-banner.profit .apb-banner-value{ color:#0f6b41; }
 .apb-banner.profit .apb-banner-detail{ color:#0f5233; }
 
-/* Loss state */
-.apb-banner.loss{
-  background:linear-gradient(120deg,#fdeeea,#fbd9cf);
-  border-color:#c1401f;
-}
+.apb-banner.loss{ background:linear-gradient(120deg,#fdeeea,#fbd9cf); border-color:#c1401f; }
 .apb-banner.loss .apb-banner-label{ color:#a83219; }
 .apb-banner.loss .apb-banner-value{ color:#c1401f; }
 .apb-banner.loss .apb-banner-detail{ color:#8a2a12; }
 
-/* Neutral state */
-.apb-banner.neutral{
-  background:#f7f9fb;
-  border-color:#cfd6de;
-}
-.apb-banner.neutral .apb-banner-value{
-  font-size:28px;
-  color:#a7b0b8;
-}
-.apb-banner.neutral .apb-banner-detail{
-  font-size:13px;
-  font-weight:500;
-  color:#64758a;
-}
+.apb-banner.neutral{ background:#f7f9fb; border-color:#cfd6de; }
+.apb-banner.neutral .apb-banner-value{ font-size:28px; color:#a7b0b8; }
+.apb-banner.neutral .apb-banner-detail{ font-size:13px; font-weight:500; color:#64758a; }
 
-/* Pulse animation on loss */
 @keyframes apbPulseLoss{
   0%,100%{ box-shadow:0 0 0 0 rgba(193,64,31,.45); }
   50%    { box-shadow:0 0 0 14px rgba(193,64,31,0); }
@@ -202,18 +176,17 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
 
 @media print{.topbar,.printbar,.tabbar{display:none !important;} .wrap{display:block;margin:0;} .tabpanel{display:block !important;}}
 
-/* ---------- Credit footer (darker for readability) ---------- */
+/* Credit footer (darker) */
 .clay-credit{
   text-align:center;
   font-size:11px;
-  color:#5a6470;              /* was #a7b0b8 — 2 shades darker */
-  font-weight:600;            /* bumped from 500 */
+  color:#5a6470;
+  font-weight:600;
   letter-spacing:.5px;
   padding:16px 0 10px;
   user-select:none;
 }
 
-/* ---------- Print-only section titles & cleanup ---------- */
 .print-only-title{display:none;}
 @media print{
   .print-only-title{display:block;font-family:'Sora',sans-serif;font-size:16px;font-weight:800;color:var(--navy);margin:22px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--navy);page-break-before:always;}
@@ -223,12 +196,129 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
   .apb-banner{ animation:none !important; }
 }
 
-/* ---------- Mode switch (Residential / Commercial) ---------- */
 .mode-switch{display:flex;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:9px;padding:3px;}
 .mode-btn{background:transparent;border:none;color:#c3d1e2;padding:7px 16px;border-radius:6px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:inherit;}
 .mode-btn.active{background:#fff;color:var(--navy-dark);}
 .mode-panel{display:none;}
 .mode-panel.active{display:block;}
+
+/* ================================================================
+   PRINT-ONLY EXCEL-STYLE APPROVAL SUMMARY
+   ================================================================ */
+.print-summary{ display:none; }
+
+@media print{
+  /* When "printing-summary" is set, hide calculator UI and show the summary */
+  body.printing-summary .topbar{ display:none !important; }
+  body.printing-summary .tabbar{ display:none !important; }
+  body.printing-summary .approve-bar{ display:none !important; }
+  body.printing-summary #mode-residential > .wrap{ display:none !important; }
+  body.printing-summary #mode-commercial{ display:none !important; }
+
+  body.printing-summary .print-summary{
+    display:block !important;
+    padding:18px 22px;
+    max-width:920px;
+    margin:0 auto;
+    font-family:'Inter',sans-serif;
+    font-size:11.5px;
+    color:#1c2b39;
+    line-height:1.35;
+  }
+
+  .ps-header{
+    text-align:center;
+    margin-bottom:14px;
+    padding-bottom:8px;
+    border-bottom:2px solid #0d3a63;
+  }
+  .ps-title{
+    font-family:'Sora',sans-serif;
+    font-size:18px;
+    font-weight:800;
+    color:#0d3a63;
+    letter-spacing:.4px;
+  }
+  .ps-sub{
+    font-size:10.5px;
+    color:#64758a;
+    margin-top:3px;
+  }
+
+  .ps-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:14px;
+  }
+  .ps-table td{
+    padding:5px 10px;
+    border:1px solid #cfd6de;
+    vertical-align:middle;
+    font-size:11.5px;
+  }
+  .ps-label{
+    width:220px;
+    font-weight:700;
+    background:#f7f9fb;
+    color:#0d3a63;
+  }
+  .ps-cash td{
+    background:#fff8e0;
+    font-weight:800;
+    font-size:13.5px;
+  }
+  .ps-cash-val{
+    text-align:right;
+    color:#0d3a63;
+    font-variant-numeric:tabular-nums;
+  }
+
+  .ps-cost{
+    width:100%;
+    border-collapse:collapse;
+    font-size:11px;
+    margin-top:8px;
+  }
+  .ps-cost th{
+    background:#0d3a63;
+    color:#fff;
+    padding:6px 8px;
+    font-size:10px;
+    text-transform:uppercase;
+    border:1px solid #0d3a63;
+    text-align:left;
+    letter-spacing:.3px;
+  }
+  .ps-cost td{
+    padding:4px 8px;
+    border:1px solid #cfd6de;
+  }
+  .ps-num{ text-align:right; font-variant-numeric:tabular-nums; }
+  .ps-num-hero{ text-align:right; font-weight:800; font-size:14px; font-variant-numeric:tabular-nums; }
+
+  .ps-row-header td{ background:#dfe9f3; font-weight:800; color:#0d3a63; }
+  .ps-system-total td{ background:#f0f4f8; font-weight:800; font-size:12.5px; }
+  .ps-stc td{ background:#e7f6ef; color:#1a7a4c; font-weight:700; }
+  .ps-oop-hero td{ background:#fff8e0; font-weight:800; font-size:14px; }
+  .ps-crm-hero td{ background:#fff8e0; font-weight:800; font-size:14px; }
+  .ps-profit td{ background:#e7f6ef; color:#1a7a4c; font-weight:700; }
+  .ps-profit.loss td{ background:#fdeeea; color:#c1401f; }
+
+  .ps-footer{
+    display:flex;
+    justify-content:space-between;
+    margin-top:26px;
+    padding-top:12px;
+    border-top:1px solid #cfd6de;
+    font-size:11px;
+    color:#33475b;
+  }
+
+  body.printing-summary .clay-credit{
+    display:block !important;
+    margin-top:14px;
+  }
+}
 </style>
 </head>
 <body>
@@ -241,6 +331,7 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
       <button class="mode-btn" id="btn-commercial" onclick="setMode('commercial')">Commercial</button>
     </div>
     <button class="btn ghost" style="background:transparent;border-color:rgba(255,255,255,.4);color:#fff;padding:7px 14px;" onclick="window.print()">Print / Save PDF</button>
+    <button class="btn ghost" style="background:#d98a3d;border-color:#d98a3d;color:#0d2438;padding:7px 14px;font-weight:800;" onclick="printApprovalExcelStyle()">🖨 Print Approval</button>
     <div class="badge-live"><span class="pulse"></span>Internal Tool</div>
   </div>
 </div>
@@ -263,6 +354,11 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
           </select>
         </div>
         <div><label>Sales Rep</label><input id="salesRep" placeholder="Name"></div>
+      </div>
+      <div class="row three">
+        <div><label>Distributor</label><input id="distributor" value="WP"></div>
+        <div><label>Phase</label><input id="phase" value="1" readonly></div>
+        <div><label>Roof</label><input id="roofMaterial" value="Tile" readonly></div>
       </div>
     </div>
 
@@ -493,7 +589,6 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
             </div>
           </div>
 
-          <!-- BIG HIGHLIGHTED RESULT BANNER -->
           <div class="apb-banner neutral" id="apb_banner">
             <div class="apb-banner-label">Result</div>
             <div class="apb-banner-value" id="apb_result">Awaiting price…</div>
@@ -644,23 +739,104 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
 </div>
 
 
+<!-- ================================================================
+     PRINT-ONLY EXCEL-STYLE APPROVAL SUMMARY
+     Only visible when printApprovalExcelStyle() is called.
+     ================================================================ -->
+<div id="print-summary" class="print-summary">
+  <div class="ps-header">
+    <div class="ps-title">Deal Approval Summary</div>
+    <div class="ps-sub" id="ps_generated">Generated —</div>
+  </div>
+
+  <table class="ps-table">
+    <tbody>
+      <tr><td class="ps-label">Project Number:</td><td id="ps_projectNo">—</td></tr>
+      <tr><td class="ps-label">Source:</td><td id="ps_source">—</td></tr>
+      <tr><td class="ps-label">Sales Rep:</td><td id="ps_salesRep">—</td></tr>
+      <tr><td class="ps-label">State:</td><td id="ps_state">—</td></tr>
+      <tr><td class="ps-label">Post code:</td><td id="ps_postcode">—</td></tr>
+      <tr><td class="ps-label">Distance:</td><td id="ps_distance">—</td></tr>
+      <tr><td class="ps-label">Panels Quantity:</td><td id="ps_panelQty">—</td></tr>
+      <tr><td class="ps-label">Panels Brand:</td><td id="ps_panelBrand">—</td></tr>
+      <tr><td class="ps-label">Grid Inverter:</td><td id="ps_gridInv">—</td></tr>
+      <tr><td class="ps-label">Battery Brand:</td><td id="ps_battBrand">—</td></tr>
+      <tr><td class="ps-label">Hybrid inverter &amp; Battery:</td><td id="ps_battCombo">—</td></tr>
+      <tr><td class="ps-label">Blackout:</td><td id="ps_blackout">—</td></tr>
+      <tr><td class="ps-label">Storey :</td><td id="ps_storey">—</td></tr>
+      <tr><td class="ps-label">Phase :</td><td id="ps_phase">1</td></tr>
+      <tr><td class="ps-label">Roof</td><td id="ps_roof">Tile</td></tr>
+      <tr><td class="ps-label">Optimisers:</td><td>N/A</td></tr>
+      <tr><td class="ps-label">No of Splits:-</td><td id="ps_splits">—</td></tr>
+      <tr><td class="ps-label">Terracotta Tile:-</td><td id="ps_terracotta">NO</td></tr>
+      <tr><td class="ps-label">ECD :</td><td id="ps_ecd">N/A</td></tr>
+      <tr><td class="ps-label">GSD :</td><td id="ps_gsd">N/A</td></tr>
+      <tr><td class="ps-label">MIS :</td><td>N/A</td></tr>
+      <tr class="ps-cash"><td class="ps-label">Cash Price:</td><td id="ps_cashPrice" class="ps-cash-val">$0.00</td></tr>
+      <tr><td class="ps-label">Deposit:</td><td id="ps_deposit">—</td></tr>
+      <tr><td class="ps-label">Finance price / Term:</td><td id="ps_finance">—</td></tr>
+      <tr><td class="ps-label">Distributor :</td><td id="ps_distributor">—</td></tr>
+      <tr><td class="ps-label">Active Internet Availability :</td><td>—</td></tr>
+      <tr><td class="ps-label">Extra:</td><td>—</td></tr>
+      <tr><td class="ps-label">Others:</td><td>—</td></tr>
+      <tr><td class="ps-label">Panels Layout:</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <table class="ps-cost">
+    <thead>
+      <tr>
+        <th style="width:22%">Item</th>
+        <th style="width:38%">Description</th>
+        <th style="width:10%">Qty</th>
+        <th style="width:14%">Price</th>
+        <th style="width:16%">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="ps-row-header"><td colspan="4">System Cost (Product + Install + Extras)</td><td id="ps_sysCost" class="ps-num">$0.00</td></tr>
+      <tr><td></td><td>Panels</td><td id="ps_q_panels">0</td><td id="ps_p_panels">$0</td><td id="ps_t_panels" class="ps-num">$0</td></tr>
+      <tr><td></td><td>Grid Inverter</td><td id="ps_q_grid">0</td><td id="ps_p_grid">$0</td><td id="ps_t_grid" class="ps-num">$0</td></tr>
+      <tr><td></td><td>Hybrid Inverter</td><td id="ps_q_hybrid">0</td><td id="ps_p_hybrid">$0</td><td id="ps_t_hybrid" class="ps-num">$0</td></tr>
+      <tr><td></td><td>Battery</td><td id="ps_q_batt">0</td><td id="ps_p_batt">$0</td><td id="ps_t_batt" class="ps-num">$0</td></tr>
+      <tr><td></td><td>EV Charger</td><td id="ps_q_ev">0</td><td id="ps_p_ev">$0</td><td id="ps_t_ev" class="ps-num">$0</td></tr>
+      <tr><td></td><td>Rack</td><td id="ps_q_rack">1</td><td id="ps_p_rack">$0</td><td id="ps_t_rack" class="ps-num">$0</td></tr>
+      <tr><td></td><td>Marketing</td><td id="ps_q_mkt">1</td><td id="ps_p_mkt">$0</td><td id="ps_t_mkt" class="ps-num">$0</td></tr>
+      <tr><td></td><td>Admin</td><td id="ps_q_admin">1</td><td id="ps_p_admin">$0</td><td id="ps_t_admin" class="ps-num">$0</td></tr>
+      <tr><td></td><td>Extra</td><td id="ps_q_extra">1</td><td id="ps_p_extra">$0</td><td id="ps_t_extra" class="ps-num">$0</td></tr>
+      <tr><td></td><td>Electrical material</td><td id="ps_q_elec">1</td><td id="ps_p_elec">$0</td><td id="ps_t_elec" class="ps-num">$0</td></tr>
+      <tr><td></td><td>Installation — Solar</td><td id="ps_q_solar">1</td><td id="ps_p_solar">$0</td><td id="ps_t_solar" class="ps-num">$0</td></tr>
+      <tr><td></td><td>Installation — Battery</td><td id="ps_q_binst">1</td><td id="ps_p_binst">$0</td><td id="ps_t_binst" class="ps-num">$0</td></tr>
+      <tr class="ps-system-total"><td colspan="4">System Cost Total</td><td id="ps_systemTotal" class="ps-num">$0.00</td></tr>
+      <tr class="ps-stc"><td colspan="4">STC Rebate (Solar + Battery)</td><td id="ps_stcTotal" class="ps-num">$0.00</td></tr>
+      <tr class="ps-oop-hero"><td colspan="4">Out of Pocket Price</td><td id="ps_oop" class="ps-num-hero">$0.00</td></tr>
+      <tr class="ps-crm-hero"><td colspan="4">CRM Input Price</td><td id="ps_crm" class="ps-num-hero">$0.00</td></tr>
+      <tr class="ps-profit" id="ps_profitRow"><td colspan="4">Solar Net Profit</td><td id="ps_profit" class="ps-num">$0.00</td></tr>
+      <tr><td colspan="4">Marketing &amp; Admin Cost</td><td id="ps_mktAdmin" class="ps-num">$0.00</td></tr>
+    </tbody>
+  </table>
+
+  <div class="ps-footer">
+    <div>Reviewed by: _______________________</div>
+    <div>Date: _______________________</div>
+  </div>
+</div>
+
+
 <script>
 const DATA = {"panels":[{"Brand":"Jinko","Name":"Jinko Solar Tiger Neo N-Type 475W Black Frame 192 1/4 Cut Cells Mono","Watt":475,"Price":121},{"Brand":"Sunpro","Name":"Sunpro N-Topcon 475W Bifacial 96 Half-Cut Cells Mono","Watt":475,"Price":98},{"Brand":"JA Solar","Name":"JA Solar LR Series 475W Black Frame Double Glass 108 Half-Cut Cells Mono","Watt":475,"Price":110}],"grid":[{"name":"Solis- S6-GR1P5K-S (AS4777-2 2020)","ratedac":5000,"phase":1,"mppt":2,"price":550},{"name":"Solis- S6-GR1P8K03-NV-ND-AU (AS4777-2 2020)","ratedac":8000,"phase":1,"mppt":3,"price":956.31},{"name":"Solis- S6-GR1P10K03-NV-ND-AU (AS4777-2 2020)","ratedac":10000,"phase":1,"mppt":3,"price":1007.88},{"name":"Solis- S5-GR3P5K-AU (AS4777-2 2020)","ratedac":5000,"phase":3,"mppt":2,"price":825.0},{"name":"Solis- S5-GR3P6K-AU (AS4777-2 2020)","ratedac":6000,"phase":3,"mppt":2,"price":825.0},{"name":"Solis- S6-GR3P8K03-NV-ND-AU (AS4777-2 2020)","ratedac":8000,"phase":3,"mppt":3,"price":1171.5},{"name":"Solis- S6-GR3P9.9K03-NV-ND-AU (AS4777-2 2020)","ratedac":9900,"phase":3,"mppt":3,"price":1457.5},{"name":"SMA- STP8.0-3AV-40 (AS4777-2 2020)","ratedac":8000,"phase":3,"mppt":2,"price":1084.6},{"name":"SMA- STP10.0-3AV-40 (AS4777-2 2020)","ratedac":10000,"phase":3,"mppt":2,"price":1177}],"ev":[{"brand":"Sigenergy","name":"Sigenergy Sigen 7.0kW EV AC Charger Single Phase","model":"Sigen EVAC 7 4G T2-WH","price":999},{"brand":"Sigenergy","name":"Sigenergy Sigen 22.0kW EV AC Charger Three Phase","model":"Sigen EVAC 22 4G T2-WH","price":1199},{"brand":"Sigenergy","name":"Sigenergy 12.5kW SigenStor EV DC Charging Module With 10 Metre Cable - Upgradable to 25kW","model":"SigenStor EVDC12 10S2U","price":2999},{"brand":"Foxess","name":"FOXESS AC EV Charger A Series Black 7.3kW Plug 6m Cables 1Phase","model":"FOX-A7300P1-E-B-Black","price":579},{"brand":"Foxess","name":"FOXESS AC EV Charger A Series Black 22kW Plug 6m Cables 3Phase","model":"FOX-A022KP1-E-B-Black","price":810}],"hybrid":[{"name":"GROWATT SPH 5000TL-HUB (AS4777-2 2020)","ratedac":"1000W","phase":1,"mppt":2,"price":1504.36},{"name":"GROWATT MOD 5000TL3-XH (AS4777-2 2020)","ratedac":"5000W","phase":3,"mppt":2,"price":976.8},{"name":"GROWATT MOD 8000TL3-XH (AS4777-2 2020)","ratedac":"8000W","phase":3,"mppt":2,"price":1171.5},{"name":"GROWATT MOD 10KTL3-XH (AS4777-2 2020)","ratedac":"10000W","phase":3,"mppt":2,"price":1188},{"name":"Swatten Swatten 5kW 1 Phase 2 MPPT Hybrid (SiH-5kW-SH (AS4777-2 2020))","ratedac":"5000W","phase":1,"mppt":2,"price":1307.9},{"name":"Swatten Swatten H1 8kW 1 Phase 4 MPPT Hybrid (SiH-8kW-SH (AS4777-2 2020))","ratedac":"8000W","phase":1,"mppt":4,"price":2077.9},{"name":"Swatten Swatten H1 10kW 1 Phase 4 MPPT Hybrid (SiH-10kW-SH (AS4777-2 2020))","ratedac":"10000W","phase":1,"mppt":4,"price":2187.9},{"name":"Swatten SWATTEN H1 Series 5kW 3 Phase 2 MPPT Hybrid (SiH-5kW-TH (AS4777-2 2020))","ratedac":"5000W","phase":3,"mppt":2,"price":1857.9},{"name":"Swatten SWATTEN H1 Series 10kW 3 Phase 2 MPPT Hybrid (SiH-10kW-TH (AS4777-2 2020))","ratedac":"10000W","phase":3,"mppt":2,"price":2242.9},{"name":"Swatten Swatten H1 10kW 3 Phase 3 MPPT Hybrid (SiH-10kW-TH-PRO (AS4777-2 2020))","ratedac":"10000W","phase":3,"mppt":3,"price":2627.9},{"name":"Swatten Swatten H1 15kW 3 Phase 3 MPPT Hybrid (SiH-15kW-TH (AS4777-2 2020))","ratedac":"15000W","phase":3,"mppt":3,"price":3177.9},{"name":"Swatten Swatten H1 20kW 3 Phase 3 MPPT Hybrid (SiH-20kW-TH (AS4777-2 2020))","ratedac":"20000W","phase":3,"mppt":3,"price":3397.9},{"name":"Swatten Swatten H1 25kW 3 Phase 3 MPPT Hybrid (SiH-25kW-TH (AS4777-2 2020))","ratedac":"25000W","phase":3,"mppt":3,"price":3507.9},{"name":"Swatten Swatten H1 30kW 3 Phase 3 MPPT Hybrid (SiH-30kW-TH (AS4777-2 2020))","ratedac":"30000W","phase":3,"mppt":3,"price":4002.9},{"name":"Solis S6-EH1P8K-L-PLUS-AU (AS4777-2 2020)","ratedac":"8000W","phase":1,"mppt":2,"price":1595.88},{"name":"Solis S6-EH3P5K-H-AU (AS4777-2 2020)","ratedac":"5000W","phase":3,"mppt":3,"price":1990.56},{"name":"Solis S6-EH3P10K-H-AU (AS4777-2 2020)","ratedac":"10000W","phase":3,"mppt":4,"price":2167.88},{"name":"Solis S6-EH3P30K-H-AU (AS4777-2 2020)","ratedac":"30000W","phase":3,"mppt":3,"price":5655.94},{"name":"Solis S6-EH3P50K-H-AU (AS4777-2 2020)","ratedac":"50000W","phase":3,"mppt":4,"price":6706.13},{"name":"SUNGROW SH5.0RS (AS4777-2 2020)","ratedac":"5000W","phase":1,"mppt":2,"price":1841.84},{"name":"SUNGROW SH8.0RS (AS4777-2 2020)","ratedac":"8000W","phase":1,"mppt":4,"price":2525.95},{"name":"SUNGROW SH10RS (AS4777-2 2020)","ratedac":"10000W","phase":1,"mppt":4,"price":2894.32},{"name":"SUNGROW SH5T (AS4777-2 2020)","ratedac":"5000W","phase":3,"mppt":2,"price":2946.94},{"name":"SUNGROW SH10T (AS4777-2 2020)","ratedac":"10000W","phase":3,"mppt":2,"price":3578.43},{"name":"SUNGROW SH15T (AS4777-2 2020)","ratedac":"15000W","phase":3,"mppt":3,"price":4204.66},{"name":"SUNGROW SH20T (AS4777-2 2020)","ratedac":"20000W","phase":3,"mppt":3,"price":5288.71},{"name":"SUNGROW SH25T (AS4777-2 2020)","ratedac":"25000W","phase":3,"mppt":3,"price":6341.19},{"name":"SOFAR ESI 5K-S1-A (AS4777-2 2020)\n(Powerall inverter)","ratedac":"5000W","phase":1,"mppt":2,"price":1029.6},{"name":"SOFAR HYD 5KTL-3PH (AS4777-2 2020)","ratedac":"5000W","phase":3,"mppt":2,"price":1730.87},{"name":"SOFAR HYD 8KTL-3PH (AS4777-2 2020)","ratedac":"8000W","phase":3,"mppt":2,"price":1917.34},{"name":"SOFAR HYD 10KTL-3PH (AS4777-2 2020)","ratedac":"10000W","phase":3,"mppt":2,"price":2150.72},{"name":"SOFAR HYD 15KTL-3PH (AS4777-2 2020)","ratedac":"15000W","phase":3,"mppt":2,"price":2554.55},{"name":"Foxess H1-5.0-E-G2 (AS4777-2 2020)","ratedac":"5000W","phase":1,"mppt":2,"price":1125.19},{"name":"Foxess KH8 (AS4777-2 2020)","ratedac":"8000W","phase":1,"mppt":3,"price":1878.02},{"name":"Foxess KH10 (AS4777-2 2020)","ratedac":"10000W","phase":1,"mppt":4,"price":1877.26},{"name":"Foxess H3-5.0-Smart (AS4777-2 2020)","ratedac":"5000W","phase":3,"mppt":3,"price":1749.0},{"name":"Foxess H3-10.0-Smart (AS4777-2 2020)","ratedac":"10000W","phase":3,"mppt":3,"price":1935.56},{"name":"Foxess H3-15.0-Smart (AS4777-2 2020)","ratedac":"15000W","phase":3,"mppt":3,"price":2040.5},{"name":"Foxess H3-Pro-15.0 (AS4777-2 2020)","ratedac":"15000W","phase":3,"mppt":3,"price":3008.28},{"name":"Foxess H3-Pro-20.0 (AS4777-2 2020)","ratedac":"20000W","phase":3,"mppt":3,"price":4325.86},{"name":"Foxess H3-Pro-25.0 (AS4777-2 2020)","ratedac":"25000W","phase":3,"mppt":3,"price":4675.66},{"name":"Foxess H3-Pro-29.9 (AS4777-2 2020)","ratedac":"29900W","phase":3,"mppt":3,"price":5375.26},{"name":"Sigenergy SigenStor EC 5.0 SP AU (AS4777-2 2020)","ratedac":"4999W","phase":1,"mppt":2,"price":1457.5},{"name":"Sigenergy SigenStor EC 8.0 SP AU (AS4777-2 2020)","ratedac":"8000W","phase":1,"mppt":3,"price":2653.82},{"name":"Sigenergy SigenStor EC 10.0 SP AU (AS4777-2 2020)","ratedac":"10000W","phase":1,"mppt":4,"price":2859.03},{"name":"Sigenergy SigenStor EC 12.0 SP AU (AS4777-2 2020)","ratedac":"12000W","phase":1,"mppt":4,"price":3066.58},{"name":"Sigenergy SigenStor EC 5.0 TP AU (AS4777-2 2020)","ratedac":"5000W","phase":3,"mppt":2,"price":2471.92},{"name":"Sigenergy SigenStor EC 10.0 TP AU (AS4777-2 2020)","ratedac":"10000W","phase":3,"mppt":3,"price":2859.03},{"name":"Sigenergy SigenStor EC 15.0 TP AU (AS4777-2 2020)","ratedac":"15000W","phase":3,"mppt":3,"price":3761.52},{"name":"Sigenergy SigenStor EC 20.0 TP AU (AS4777-2 2020)","ratedac":"20000W","phase":3,"mppt":4,"price":4288.55},{"name":"Sigenergy SigenStor EC 25.0 TP AU (AS4777-2 2020)","ratedac":"25000W","phase":3,"mppt":4,"price":4920.52},{"name":"Sigenergy SigenStor EC 30.0 TP AU (AS4777-2 2020)","ratedac":"30000W","phase":3,"mppt":4,"price":5410.24}],"combos":[{"brand":"Neovolt","combo":"BW-INV-TPH8K + 2 x BW-BAT-4.8S","price":4891,"kw":9.6,"usable":9.2},{"brand":"Neovolt","combo":"BW-INV-TPH8K + 3 x BW-BAT-4.8S","price":6398,"kw":14.4,"usable":13.8},{"brand":"Neovolt","combo":"BW-INV-TPH8K + 4 x BW-BAT-4.8S","price":7905,"kw":19.2,"usable":18.4},{"brand":"Neovolt","combo":"BW-INV-TPH8K + 5 x BW-BAT-4.8S","price":9524,"kw":24,"usable":23},{"brand":"Neovolt","combo":"BW-INV-TPH8K + 6 x BW-BAT-4.8S","price":11031,"kw":28.8,"usable":27.6},{"brand":"Neovolt","combo":"BW-INV-TPH10K + 2 x BW-BAT-4.8S","price":5001,"kw":9.6,"usable":9.2},{"brand":"Neovolt","combo":"BW-INV-TPH10K + 3 x BW-BAT-4.8S","price":6508,"kw":14.4,"usable":13.8},{"brand":"Neovolt","combo":"BW-INV-TPH10K + 4 x BW-BAT-4.8S","price":8015,"kw":19.2,"usable":18.4},{"brand":"Neovolt","combo":"BW-INV-TPH10K + 5 x BW-BAT-4.8S","price":9634,"kw":24,"usable":23},{"brand":"Neovolt","combo":"BW-INV-TPH10K + 6 x BW-BAT-4.8S","price":11141,"kw":28.8,"usable":27.6},{"brand":"Growatt","combo":"MOD 5000TL3-XH + Growatt APX 5.0P-S2 HV Battery-System (APX 5.0P-S2)","price":3162,"kw":5,"usable":4.5},{"brand":"Growatt","combo":"MOD 5000TL3-XH + Growatt APX 10.0P-S2 HV Battery-System (APX 10.0P-S2)","price":4572,"kw":10,"usable":9},{"brand":"Growatt","combo":"MOD 5000TL3-XH + Growatt APX 15.0P-S2 HV Battery-System (APX 15.0P-S2)","price":5981,"kw":15,"usable":13.5},{"brand":"Growatt","combo":"MOD 5000TL3-XH + Growatt APX 20.0P-S2 HV Battery-System (APX 20.0P-S2","price":7390,"kw":20,"usable":18},{"brand":"Growatt","combo":"MOD 5000TL3-XH + Growatt APX 25.0P-S2 HV Battery-System (APX 25.0P-S2)","price":8913,"kw":25,"usable":22.5},{"brand":"Growatt","combo":"MOD 5000TL3-XH + Growatt APX 30.0P-S2 HV Battery-System (APX 30.0P-S2)","price":10322,"kw":30,"usable":27},{"brand":"Growatt","combo":"MOD 10KTL3-XH + Growatt APX 5.0P-S2 HV Battery-System (APX 5.0P-S2)","price":3412,"kw":5,"usable":4.5},{"brand":"Growatt","combo":"MOD 10KTL3-XH + Growatt APX 10.0P-S2 HV Battery-System (APX 10.0P-S2)","price":4821,"kw":10,"usable":9},{"brand":"Growatt","combo":"MOD 10KTL3-XH + Growatt APX 15.0P-S2 HV Battery-System (APX 15.0P-S2)","price":6229,"kw":15,"usable":13.5},{"brand":"Growatt","combo":"MOD 10KTL3-XH + Growatt APX 20.0P-S2 HV Battery-System (APX 20.0P-S2","price":7640,"kw":20,"usable":18},{"brand":"Growatt","combo":"MOD 10KTL3-XH + Growatt APX 25.0P-S2 HV Battery-System (APX 25.0P-S2)","price":9162,"kw":25,"usable":22.5},{"brand":"Growatt","combo":"MOD 10KTL3-XH + Growatt APX 30.0P-S2 HV Battery-System (APX 30.0P-S2)","price":10572,"kw":30,"usable":27},{"brand":"ESY Sunhome","combo":"ESYSUNHOME HM6 / HM5 + ESYSUNHOME 5KWH+","price":2341,"kw":5.12,"usable":4.864},{"brand":"ESY Sunhome","combo":"ESYSUNHOME HM6 / HM5 + ESYSUNHOME 10KWH+","price":3478,"kw":10.24,"usable":9.728},{"brand":"ESY Sunhome","combo":"ESYSUNHOME HM6 / HM5 + ESYSUNHOME 15KWH+","price":4614,"kw":15.36,"usable":14.592},{"brand":"ESY Sunhome","combo":"ESYSUNHOME HM6 / HM5 + ESYSUNHOME 20KWH+","price":5751,"kw":20.48,"usable":19.456},{"brand":"ESY Sunhome","combo":"ESYSUNHOME HM6 / HM5 + ESYSUNHOME 25KWH+","price":6888,"kw":25.6,"usable":24.32},{"brand":"ESY Sunhome","combo":"ESYSUNHOME HM6 / HM5 + ESYSUNHOME 30KWH+","price":8024,"kw":30.72,"usable":29.184},{"brand":"ESY Sunhome","combo":"ESYSUNHOME HM10 + ESYSUNHOME 5KWH+","price":3041,"kw":5.12,"usable":4.864},{"brand":"ESY Sunhome","combo":"ESYSUNHOME HM10 + ESYSUNHOME 10KWH+","price":4178,"kw":10.24,"usable":9.728},{"brand":"ESY Sunhome","combo":"ESYSUNHOME HM10 + ESYSUNHOME 15KWH+","price":5314,"kw":15.36,"usable":14.592},{"brand":"ESY Sunhome","combo":"ESYSUNHOME HM10 + ESYSUNHOME 20KWH+","price":6451,"kw":20.48,"usable":19.456},{"brand":"ESY Sunhome","combo":"ESYSUNHOME HM10 + ESYSUNHOME 25KWH+","price":7588,"kw":25.6,"usable":24.32},{"brand":"ESY Sunhome","combo":"ESYSUNHOME HM10 + ESYSUNHOME 30KWH+","price":8724,"kw":30.72,"usable":29.184},{"brand":"ESY Sunhome","combo":"ESYSUNHOME HM10-H + ESYSUNHOME10KWH+H-30","price":8334,"kw":30.85,"usable":30.85},{"brand":"ESY Sunhome","combo":"ESYSUNHOME HM10-H + ESYSUNHOME10KWH+H-40","price":10340,"kw":41.14,"usable":41.14},{"brand":"ESY Sunhome","combo":"ESYSUNHOME HM10-H + ESYSUNHOME10KWH+H-50","price":12346,"kw":51.43,"usable":51.43},{"brand":"ESY Sunhome","combo":"ESYSUNHOME HM20 + ESYSUNHOME10KWH+H-30","price":8481,"kw":30.85,"usable":30.85},{"brand":"ESY Sunhome","combo":"ESYSUNHOME HM20 + ESYSUNHOME10KWH+H-40","price":10487,"kw":41.14,"usable":41.14},{"brand":"ESY Sunhome","combo":"ESYSUNHOME HM20 + ESYSUNHOME10KWH+H-50","price":12493,"kw":51.43,"usable":51.43},{"brand":"Alpha_Solis","combo":"S6-EH1P8K-L-PLUS-AU + 2 x Smile-BAT-13.3P (13.3kWh battery)","price":6419,"kw":26.68,"usable":26.68},{"brand":"Alpha_Solis","combo":"S6-EH1P8K-L-PLUS-AU + 3 x Smile-BAT-13.3P (13.3kWh battery)","price":8803,"kw":40.02,"usable":40.02},{"brand":"Alpha_Solis","combo":"S6-EH1P8K-L-PLUS-AU + 4 x Smile-BAT-13.3P (13.3kWh battery)","price":11187,"kw":53.36,"usable":53.36},{"brand":"Pylontech_Solis","combo":"S6-EH3P5K-H-AU + 1 x Pylontech Force H3-102.4/204.8 (2 x 5.12kWh Battery)","price":4403,"kw":10.24,"usable":10.24},{"brand":"Pylontech_Solis","combo":"S6-EH3P5K-H-AU + 1 x Pylontech Force H3-102.4/307.2 (3 x 5.12kWh Battery)","price":5330,"kw":15.36,"usable":15.36},{"brand":"Pylontech_Solis","combo":"S6-EH3P5K-H-AU + 1 x Pylontech Force H3-102.4/409.6 (4 x 5.12kWh Battery)","price":6257,"kw":20.48,"usable":20.48},{"brand":"Pylontech_Solis","combo":"S6-EH3P5K-H-AU + 1 x Pylontech Force H3-102.4/512 (5 x 5.12kWh Battery)","price":7185,"kw":25.6,"usable":25.6},{"brand":"Pylontech_Solis","combo":"S6-EH3P5K-H-AU + 2 x Pylontech Force H3-102.4/307.2 (6 x 5.12kWh Battery)","price":8153,"kw":30.72,"usable":30.72},{"brand":"Pylontech_Solis","combo":"S6-EH3P5K-H-AU + 2 x Pylontech Force H3-102.4/409.6 (8 x 5.12kWh Battery)","price":9761,"kw":40.96,"usable":40.96},{"brand":"Pylontech_Solis","combo":"S6-EH3P5K-H-AU + 2 x Pylontech Force H3-102.4/512 (10 x 5.12kWh Battery)","price":11368,"kw":51.2,"usable":51.2},{"brand":"Pylontech_Solis","combo":"S6-EH3P10K-H-AU + 1 x Pylontech Force H3-102.4/204.8 (2 x 5.12kWh Battery)","price":4639,"kw":10.24,"usable":10.24},{"brand":"Pylontech_Solis","combo":"S6-EH3P10K-H-AU + 1 x Pylontech Force H3-102.4/307.2 (3 x 5.12kWh Battery)","price":5567,"kw":15.36,"usable":15.36},{"brand":"Pylontech_Solis","combo":"S6-EH3P10K-H-AU + 1 x Pylontech Force H3-102.4/409.6 (4 x 5.12kWh Battery)","price":6494,"kw":20.48,"usable":20.48},{"brand":"Pylontech_Solis","combo":"S6-EH3P10K-H-AU + 1 x Pylontech Force H3-102.4/512 (5 x 5.12kWh Battery)","price":7421,"kw":25.6,"usable":25.6},{"brand":"Pylontech_Solis","combo":"S6-EH3P10K-H-AU + 2 x Pylontech Force H3-102.4/307.2 (6 x 5.12kWh Battery)","price":8390,"kw":30.72,"usable":30.72},{"brand":"Pylontech_Solis","combo":"S6-EH3P10K-H-AU + 2 x Pylontech Force H3-102.4/409.6 (8 x 5.12kWh Battery)","price":9997,"kw":40.96,"usable":40.96},{"brand":"Pylontech_Solis","combo":"S6-EH3P10K-H-AU + 2 x Pylontech Force H3-102.4/512 (10 x 5.12kWh Battery)","price":11604,"kw":51.2,"usable":51.2},{"brand":"FOXESS","combo":"H1-5.0-E-G2+CQ7-L3  - 20.88kWh","price":6191,"kw":20.88,"usable":20.88},{"brand":"FOXESS","combo":"H1-5.0-E-G2+CQ7-L4  - 27.84kWh","price":7883,"kw":27.84,"usable":27.84},{"brand":"FOXESS","combo":"H1-5.0-E-G2+CQ7-L5  - 34.8kWh","price":9575,"kw":34.8,"usable":34.8},{"brand":"FOXESS","combo":"H1-5.0-E-G2+CQ7-L6  - 41.76kWh","price":10112,"kw":41.76,"usable":41.76},{"brand":"FOXESS","combo":"H1-5.0-E-G2+CQ7-L7  - 48.72kWh","price":11805,"kw":48.72,"usable":48.72},{"brand":"FOXESS","combo":"KH10+CQ7-L3  - 20.88kWh","price":6936,"kw":20.88,"usable":20.88},{"brand":"FOXESS","combo":"KH10+CQ7-L4  - 27.84kWh","price":8628,"kw":27.84,"usable":27.84},{"brand":"FOXESS","combo":"KH10+CQ7-L5  - 34.8kWh","price":10320,"kw":34.8,"usable":34.8},{"brand":"FOXESS","combo":"KH10+CQ7-L6  - 41.76kWh","price":10857,"kw":41.76,"usable":41.76},{"brand":"FOXESS","combo":"KH10+CQ7-L7  - 48.72kWh","price":12549,"kw":48.72,"usable":48.72},{"brand":"FOXESS","combo":"H3-5.0-Smart+CQ7-L3  - 20.88kWh","price":6809,"kw":20.88,"usable":20.88},{"brand":"FOXESS","combo":"H3-5.0-Smart+CQ7-L4  - 27.84kWh","price":8501,"kw":27.84,"usable":27.84},{"brand":"FOXESS","combo":"H3-5.0-Smart+CQ7-L5  - 34.8kWh","price":10193,"kw":34.8,"usable":34.8},{"brand":"FOXESS","combo":"H3-5.0-Smart+CQ7-L6  - 41.76kWh","price":10730,"kw":41.76,"usable":41.76},{"brand":"FOXESS","combo":"H3-5.0-Smart+CQ7-L7  - 48.72kWh","price":12422,"kw":48.72,"usable":48.72},{"brand":"FOXESS","combo":"H3-10.0-Smart+CQ7-L3  - 20.88kWh","price":6993,"kw":20.88,"usable":20.88},{"brand":"FOXESS","combo":"H3-10.0-Smart+CQ7-L4  - 27.84kWh","price":8686,"kw":27.84,"usable":27.84},{"brand":"FOXESS","combo":"H3-10.0-Smart+CQ7-L5  - 34.8kWh","price":10378,"kw":34.8,"usable":34.8},{"brand":"FOXESS","combo":"H3-10.0-Smart+CQ7-L6  - 41.76kWh","price":10915,"kw":41.76,"usable":41.76},{"brand":"FOXESS","combo":"H3-10.0-Smart+CQ7-L7  - 48.72kWh","price":12607,"kw":48.72,"usable":48.72},{"brand":"FOXESS","combo":"H3-15.0-Smart+CQ7-L3  - 20.88kWh","price":7097,"kw":20.88,"usable":20.88},{"brand":"FOXESS","combo":"H3-15.0-Smart+CQ7-L4  - 27.84kWh","price":8790,"kw":27.84,"usable":27.84},{"brand":"FOXESS","combo":"H3-15.0-Smart+CQ7-L5  - 34.8kWh","price":10482,"kw":34.8,"usable":34.8},{"brand":"FOXESS","combo":"H3-15.0-Smart+CQ7-L6  - 41.76kWh","price":11019,"kw":41.76,"usable":41.76},{"brand":"FOXESS","combo":"H3-15.0-Smart+CQ7-L7  - 48.72kWh","price":12711,"kw":48.72,"usable":48.72},{"brand":"FOXESS","combo":"H3-Pro-15.0+CQ7-L3  - 20.88kWh","price":8056,"kw":20.88,"usable":20.88},{"brand":"FOXESS","combo":"H3-Pro-15.0+CQ7-L4  - 27.84kWh","price":9749,"kw":27.84,"usable":27.84},{"brand":"FOXESS","combo":"H3-Pro-15.0+CQ7-L5  - 34.8kWh","price":11440,"kw":34.8,"usable":34.8},{"brand":"FOXESS","combo":"H3-Pro-15.0+CQ7-L6  - 41.76kWh","price":11978,"kw":41.76,"usable":41.76},{"brand":"FOXESS","combo":"H3-Pro-15.0+CQ7-L7  - 48.72kWh","price":13669,"kw":48.72,"usable":48.72},{"brand":"Sigenergy","combo":"Sigenergy 9.04kWh 3P 10kW","price":5911,"kw":9.04,"usable":9},{"brand":"Sigenergy","combo":"Sigenergy 18.08kWh 3P 10kW","price":8627,"kw":18.08,"usable":18},{"brand":"Sigenergy","combo":"Sigenergy 19.80kWh 3P 10kW","price":9872,"kw":19.8,"usable":19.8},{"brand":"Sigenergy","combo":"Sigenergy 27.12kWh 3P 10kW","price":11342,"kw":27.12,"usable":27.1},{"brand":"Sigenergy","combo":"Sigenergy 28.84kWh 3P 10kW","price":12587,"kw":28.84,"usable":28.8},{"brand":"Sigenergy","combo":"Sigenergy 36.16kWh 3P 10kW","price":14057,"kw":36.16,"usable":36.1},{"brand":"Sigenergy","combo":"Sigenergy 45.20kWh 3P 10kW","price":16772,"kw":45.2,"usable":45.2},{"brand":"Sigenergy","combo":"Sigenergy 54.24kWh 3P 10kW","price":19488,"kw":54.24,"usable":54.2},{"brand":"Sigenergy","combo":"Sigenergy 9.04kWh 1P 10kW","price":5800,"kw":9.04,"usable":9},{"brand":"Sigenergy","combo":"Sigenergy 14.42kWh 1P 10kW","price":7781,"kw":14.42,"usable":14.3},{"brand":"Sigenergy","combo":"Sigenergy 18.08kWh 1P 10kW","price":8515,"kw":18.08,"usable":18},{"brand":"Sigenergy","combo":"Sigenergy 19.80kWh 1P 10kW","price":9761,"kw":19.8,"usable":19.6},{"brand":"Sigenergy","combo":"Sigenergy 23.46kWh 1P 10kW","price":10496,"kw":23.46,"usable":23.3},{"brand":"Sigenergy","combo":"Sigenergy 27.12kWh 1P 10kW","price":11231,"kw":27.12,"usable":27.1},{"brand":"Sigenergy","combo":"Sigenergy 28.84kWh 1P 10kW","price":12476,"kw":28.84,"usable":28.8},{"brand":"Sigenergy","combo":"Sigenergy 32.50kWh 1P 10kW","price":13212,"kw":32.5,"usable":32.3},{"brand":"Sigenergy","combo":"Sigenergy 36.16kWh 1P 10kW","price":13946,"kw":36.16,"usable":36.1},{"brand":"Sigenergy","combo":"Sigenergy 37.88kWh 1P 10kW","price":15191,"kw":37.88,"usable":37.8},{"brand":"Sigenergy","combo":"Sigenergy 41.54kWh 1P 10kW","price":15927,"kw":41.54,"usable":41.3},{"brand":"Sigenergy","combo":"Sigenergy 45.20kWh 1P 10kW","price":16661,"kw":45.2,"usable":45},{"brand":"Sigenergy","combo":"Sigenergy 46.92kWh 1P 10kW","price":17907,"kw":46.92,"usable":46.9},{"brand":"Sigenergy","combo":"Sigenergy 50.58kWh 1P 10kW","price":18642,"kw":50.58,"usable":50.5},{"brand":"Sigenergy","combo":"Sigenergy 54.24kWh 1P 10kW","price":19376,"kw":54.24,"usable":54.2},{"brand":"Sigenergy","combo":"Sigenergy 45.20kWh 1P 10kW","price":16988,"kw":45.2,"usable":45},{"brand":"Sigenergy","combo":"Sigenergy 46.92kWh 1P 10kW","price":18258,"kw":46.92,"usable":46.9},{"brand":"Sigenergy","combo":"Sigenergy 50.58kWh 1P 10kW","price":19008,"kw":50.58,"usable":50.5},{"brand":"Sigenergy","combo":"Sigenergy 54.24kWh 1P 10kW","price":19756,"kw":54.24,"usable":54.2}],"zoning":[[0,799,3],[800,853,2],[854,854,3],[855,861,2],[862,862,3],[863,869,2],[870,879,1],[880,885,3],[886,1000,2],[1001,2355,3],[2356,2357,2],[2358,2384,3],[2385,2389,2],[2390,2395,3],[2396,2397,2],[2398,2399,3],[2400,2400,2],[2401,2404,3],[2405,2407,2],[2408,2544,3],[2545,2554,4],[2555,2627,3],[2628,2628,4],[2629,2629,3],[2630,2639,4],[2640,2816,3],[2817,2817,2],[2818,2820,3],[2821,2829,2],[2830,2830,3],[2831,2841,2],[2842,2872,3],[2873,2873,2],[2874,2877,3],[2878,2889,2],[2890,2999,3],[3000,3035,4],[3036,3038,3],[3039,3044,4],[3045,3045,3],[3046,3046,4],[3047,3049,3],[3050,3058,4],[3059,3059,3],[3060,3060,4],[3061,3064,3],[3065,3074,4],[3075,3076,3],[3077,3098,4],[3099,3099,3],[3100,3292,4],[3293,3302,3],[3303,3308,4],[3309,3319,3],[3320,3333,4],[3334,3337,3],[3338,3339,4],[3340,3758,3],[3759,3760,4],[3761,3764,3],[3765,3999,4],[4000,4416,3],[4417,4417,2],[4418,4427,3],[4428,4473,2],[4474,4476,1],[4477,4478,2],[4479,4485,1],[4486,4491,2],[4492,4492,1],[4493,4493,2],[4494,4494,3],[4495,4497,2],[4498,4719,3],[4720,4722,2],[4723,4723,3],[4724,4734,2],[4735,4736,1],[4737,4822,3],[4823,4823,2],[4824,4824,3],[4825,4827,2],[4828,4828,3],[4829,4829,1],[4830,5431,3],[5432,5450,2],[5451,5654,3],[5655,5669,2],[5670,5679,3],[5680,5699,2],[5700,5709,3],[5710,5722,2],[5723,5724,1],[5725,5730,2],[5731,5731,1],[5732,5732,2],[5733,5799,1],[5800,6043,3],[6044,6044,2],[6045,6256,3],[6257,6270,4],[6271,6316,3],[6317,6349,4],[6350,6353,3],[6354,6356,4],[6357,6394,3],[6395,6400,4],[6401,6430,3],[6431,6431,2],[6432,6433,3],[6434,6440,2],[6441,6441,1],[6442,6444,3],[6445,6459,4],[6460,6467,3],[6468,6469,2],[6470,6471,3],[6472,6472,2],[6473,6506,3],[6507,6508,2],[6509,6509,3],[6510,6536,2],[6537,6537,1],[6538,6555,2],[6556,6573,3],[6574,6602,2],[6603,6607,3],[6608,6641,2],[6642,6724,1],[6725,6750,2],[6751,6764,1],[6765,6765,2],[6766,6797,1],[6798,6799,2],[6800,6999,3],[7000,8999,4],[9000,9999,3]],"zonerating":[[1,1.622],[2,1.536],[3,1.382],[4,1.185]],"staterates":[["NSW","0.28",0.3,"2500",3000],["QLD","0.3",0.34,"3000",3500],["SA","0.3",0.34,"2800",3000],["TAS","0.4",0.4,"3000",3500],["ACT","0.38",0.38,"2500",3000],["VIC","0.36",0.38,"2500",3000],["WA","0.3",0.34,"3500",4000]],"extrasTable":[["NSW",0.28,0.3,250,250],["QLD",0.3,0.34,250,250],["SA",0.3,0.32,250,250],["TAS",0.4,0.4,250,250],["ACT",0.38,0.38,250,250],["VIC",0.36,0.38,300,250],["WA",0.3,0.34,400,300]],"jobchargeDist":[[1000,2250,2300],[1000,2301,2339],[1200,2340,2355],[1200,2360,2370],[1200,2425,2499],[600,2500,2535],[1500,2536,2551],[0,2552,2571],[600,2572,2579],[1500,2580,2631],[1500,2640,2671],[1500,2701,2705],[1500,2720,2720],[1500,2722,2722],[1500,2729,2729],[0,2740,2781],[600,2782,2789],[1500,2790,2871],[150,6038,6038],[150,6041,6041],[150,6044,6044],[150,6056,6056],[150,6076,6076],[150,6084,6084],[150,6122,6122],[150,6401,6401],[0,6000,6168],[300,6169,6210],[500,6211,6215],[750,6230,6233],[750,6280,6285],[1650,6324,6329],[1650,6330,6335],[1320,6407,6415],[2000,6426,6426],[2000,6429,6442],[1650,6514,6517],[1650,6530,6535],[1650,6536,6536],["DO NOT SELL",7255,7255],["DO NOT SELL",7257,7257],[1000,7000,7180],[1500,7248,7380],[500,5200,5219],[500,5231,5256],[800,5262,5262],[800,5267,5291],[0,5301,5319],[800,5320,5357],[0,5358,5399],["DO NOT SELL",5400,5499],[0,5501,5549],[800,5550,5573],["DO NOT SELL",5574,5599],[700,3551,3551],[700,3690,3690],[700,3279,3279],[0,3174,3174],[0,3175,3175],[0,3037,3037],[0,4000,4182],[0,4185,4199],[0,4300,4339],[0,4340,4342],[2000,4183,4183],[2000,4184,4184],[2000,4216,4216],[0,4200,4215],[0,4217,4299],[250,4343,4352],[600,4353,4404],[600,4370,4384],[1100,4385,4399],[1100,4405,4416],[1100,4417,4467],[1100,4468,4471],[1100,4472,4499],[250,4500,4599],[800,4600,4619],[800,4620,4655],[900,4656,4675],[900,4676,4695],[1800,4696,4708],[1800,4710,4714],["DO NOT SELL",4709,4709],["DO NOT SELL",4717,4717],["DO NOT SELL",4720,4723],[1400,4715,4716],[1400,4718,4719],[1700,4724,4726],[1700,4728,4729],[1700,4727,4727],[1700,4730,4736],[1600,4737,4743],[1600,4750,4800],[1400,4744,4749],["DO NOT SELL",4801,4803],[1800,4804,4818],["DO NOT SELL",4819,4819],[2000,4820,4823],[2400,4824,4848],[2100,4849,4864],[2200,4865,4870],[2200,4873,4873],[2200,4877,4879],[2200,4881,4881],[2200,4871,4872],[2200,4882,4889],[2400,4874,4876],[2400,4892,4894],[2200,4880,4880],[2200,4890,4891],[2400,4895,4999],[1500,2600,2618],[1500,2900,2920]],"qldZones":[[0,4000,4182,null],[0,4185,4199,null],[0,4300,4342,null],[0,4183,4183,null],[0,4184,4184,null],[0,4216,4216,null],[0,4200,4215,null],[0,4217,4299,null],[18.18182,4343,4369,null],[18.18182,4400,4404,null],[0,4370,4384,null],[0,4383,4399,null],[43.93939,4405,4416,null],[63.63636,4417,4467,null],[65.90909,4468,4471,null],[65.90909,4472,4499,null],[18.18182,4500,4599,null],[40.90909,4600,4619,null],[40.90909,4620,4655,null],[34.09091,4656,4675,null],[37.87879,4676,4695,null],[37.12121,4696,4708,null],[37.12121,4710,4714,null],[37.12121,4709,4709,null],[37.12121,4717,4717,null],[37.12121,4720,4723,null],[37.87879,4715,4716,null],[37.87879,4718,4719,null],[0,4724,4726,null],[0,4728,4729,null],[0,4727,4727,null],[0,4730,4736,null],[45.45455,4737,4743,null],[45.45455,4750,4800,null],[45.45455,4744,4749,null],[45.45455,4801,4803,"(Island job 700 extra for ferry)"],[45.45455,4804,4808,"(Charge 135/kW extra for Tile roof)"],[53.0303,4809,4815,"(Charge 135/kW extra for Tile roof)"],[53.0303,4817,4818,"(Charge 135/kW extra for Tile roof)"],[53.0303,4816,4816,"(Charge 135/kW extra for Tile roof)"],[53.0303,4819,4819,"(Charge 135/kW extra for Tile roof + 700 for Ferry)"],[53.0303,4820,4820,null],[53.0303,4821,4822,null],[0,4823,4823,"Do not Sell"],[0,4824,4828,"$2000 extra, confirm with installation team"],[0,4829,4829,"Do not Sell"],[0,4830,4848,"Do not Sell"],[53.0303,4849,4851,"(Charge 135/kW extra for Tile roof)"],[60.60606,4852,4857,"(Charge 135/kW extra for Tile roof)"],[60.60606,4858,4864,"(Charge 135/kW extra for Tile roof)"],[60.60606,4865,4870,"(Charge 135/kW extra for Tile roof)"],[60.60606,4873,4873,"(Charge 135/kW extra for Tile roof)"],[60.60606,4877,4879,"(Charge 135/kW extra for Tile roof)"],[60.60606,4881,4881,"(Charge 135/kW extra for Tile roof)"],[60.60606,4871,4871,"(Charge 135/kW extra for Tile roof)"],[60.60606,4872,4872,"(Charge 135/kW extra for Tile roof)"],[60.60606,4882,4889,"(Charge 135/kW extra for Tile roof)"],[0,4874,4876,"Do not Sell"],[0,4892,4894,"Do not Sell"],[60.60606,4880,4880,"(Charge 135/kW extra for Tile roof)"],[0,4890,4891,"Do not Sell"],[60.60606,4895,4999,null]],"batteryYear":[["2026 Jan-Apr",8.4],["2026 May-Dec",6.8],["2027 Jan-Jun",5.7],["2027 Jul-Dec",5.2],["2028 Jan-Jun",4.6],["2028 Jul-Dec",4.1],["2029 Jan-Jun",3.6],["2029 Jul-Dec",3.1],["2030 Jan-Jun",2.6],["2030 Jul-Dec",2.1]]};
 </script>
 
 <script>
 // ===================================================================
-// FIXED RESIDENTIAL CALCULATION ENGINE FOR HTML
-// Direct 1:1 port of AG_Price_Calculator_LATEST_FIXED.xlsx formulas
+// RESIDENTIAL CALCULATION ENGINE
 // ===================================================================
-
 function getNum(id) {
   const el = document.getElementById(id);
   if (!el) return 0;
   const val = parseFloat(el.value);
   return isNaN(val) ? 0 : val;
 }
-
 function fmtMoney(n){
   if (n===null||n===undefined||isNaN(n)) return '—';
   n = Number(n); if (Object.is(n,-0)) n = 0;
@@ -670,7 +846,6 @@ function fmtNum(n,d=2){ if(n===null||n===undefined||isNaN(n)) return '—'; retu
 function roundup(n,d=0){ const f=Math.pow(10,d); return Math.ceil((n*f)-1e-9)/f; }
 function rounddown(n,d=0){ const f=Math.pow(10,d); return Math.floor((n*f)+1e-9)/f; }
 
-// ---- lookups ----
 function stateFromPostcode(pc){
   pc = Number(pc);
   if ((pc>=2600&&pc<=2618)||(pc>=2900&&pc<=2920)) return 'ACT';
@@ -685,67 +860,38 @@ function stateFromPostcode(pc){
 }
 function zoneFromPostcode(pc){
   pc = Number(pc);
-  for(const [from,to,zone] of DATA.zoning){
-    if (pc>=from && pc<=to) return zone;
-  }
+  for(const [from,to,zone] of DATA.zoning){ if (pc>=from && pc<=to) return zone; }
   return '';
 }
 function ratingFromZone(zone){
   const row = DATA.zonerating.find(r=>r[0]===zone);
   return row ? row[1] : '';
 }
-function stateRateRow(state){
-  return DATA.staterates.find(r=>r[0]===state) || null;
-}
-function extrasRow(state){
-  return DATA.extrasTable.find(r=>r[0]===state) || null;
-}
-function batteryYearVal(label){
-  const row = DATA.batteryYear.find(r=>r[0]===label);
-  return row ? row[1] : 0;
-}
-function gridInvPrice(name){
-  const row = DATA.grid.find(g=>g.name===name);
-  return row ? row.price : 0;
-}
-function hybridInvPrice(name){
-  const row = DATA.hybrid.find(h=>h.name===name);
-  return row ? row.price : 0;
-}
-function evChargerPrice(name){
-  const row = DATA.ev.find(e=>e.name===name);
-  return row ? row.price : 0;
-}
-function comboLookup(comboText){
-  return DATA.combos.find(c=>c.combo===comboText) || null;
-}
+function stateRateRow(state){ return DATA.staterates.find(r=>r[0]===state) || null; }
+function extrasRow(state){ return DATA.extrasTable.find(r=>r[0]===state) || null; }
+function batteryYearVal(label){ const row = DATA.batteryYear.find(r=>r[0]===label); return row ? row[1] : 0; }
+function gridInvPrice(name){ const row = DATA.grid.find(g=>g.name===name); return row ? row.price : 0; }
+function hybridInvPrice(name){ const row = DATA.hybrid.find(h=>h.name===name); return row ? row.price : 0; }
+function evChargerPrice(name){ const row = DATA.ev.find(e=>e.name===name); return row ? row.price : 0; }
+function comboLookup(comboText){ return DATA.combos.find(c=>c.combo===comboText) || null; }
 function jobChargeDistance(pc){
-  pc = Number(pc);
-  let result = '';
-  for(const [cost,s,e] of DATA.jobchargeDist){
-    if (pc>=s && pc<=e) result = cost;
-  }
+  pc = Number(pc); let result = '';
+  for(const [cost,s,e] of DATA.jobchargeDist){ if (pc>=s && pc<=e) result = cost; }
   return result;
 }
 function qldZoneRate(pc){
-  pc = Number(pc);
-  let total = 0;
-  let matched = false;
-  for(const [rate,s,e] of DATA.qldZones){
-    if (pc>=s && pc<=e){ total += (rate||0); matched = true; }
-  }
+  pc = Number(pc); let total = 0; let matched = false;
+  for(const [rate,s,e] of DATA.qldZones){ if (pc>=s && pc<=e){ total += (rate||0); matched = true; } }
   return matched ? total : 0;
 }
 
-// ===================================================================
-// MAIN COMPUTE - EXCEL ALIGNED
-// ===================================================================
 function readInputs(){
   const g = id => document.getElementById(id);
   return {
     projectNo: g('projectNo').value,
     leadSource: g('leadSource').value,
     salesRep: g('salesRep') ? g('salesRep').value : '',
+    distributor: g('distributor') ? g('distributor').value : '',
     postcode: Number(g('postcode').value)||0,
     distance: Number(g('distance').value)||0,
     panelBrand: g('panelBrand').value,
@@ -845,7 +991,6 @@ function compute(){
   const E17 = roundup(C17 * D17, 0);
 
   const E14 = F5+F10+F16+F18+F20+manualExtrasTotal;
-
   const E18 = E6+E7+E8+E9+E_ev+E11+E12+E13+E14+E15+E16+E17;
 
   const C19 = rounddown(B3 * F1 * 5, 0);
@@ -853,11 +998,9 @@ function compute(){
   const E19 = C19 * D19;
 
   let C20;
-  if (inp.stcYear==='2026 Jan-Apr'){
-    C20 = G2 * E10;
-  } else if (E10 < 5){
-    C20 = 0;
-  } else {
+  if (inp.stcYear==='2026 Jan-Apr'){ C20 = G2 * E10; }
+  else if (E10 < 5){ C20 = 0; }
+  else {
     const tier1 = Math.min(E10, 14) * G2;
     const tier2 = E10 > 14 ? Math.min(E10 - 14, 14) * G2 * 0.60 : 0;
     const tier3 = E10 > 28 ? Math.min(E10 - 28, 22) * G2 * 0.15 : 0;
@@ -870,7 +1013,7 @@ function compute(){
   const D22 = inp.outOfPocketOverride!=='' ? Number(inp.outOfPocketOverride) : D21;
   const D23 = D22 + (Math.round(C20,0)*38);
   const D24 = D22 - D21;
-  const D25 = (D21)!==0 ? D24/D21 : 0;
+  const D25 = (D22 + E19 + E20) !== 0 ? D24 / (D22 + E19 + E20) : 0;
   const D26 = E12+E13;
 
   const plans = [
@@ -892,7 +1035,7 @@ function compute(){
     inp, panelWatt, panelInfo, F1, B2, B3, B4, F3, G2,
     E6,E7,E8,E9,E_ev,D10,E10,
     F5,F10,F16,F18,F20,
-    D11,E11,D12:E12,E12,E13,E14,D15,E15,
+    D11,E11,E12,E13,E14,D15,E15,
     D16,C16:installKWBasis,E16,D17,C17,E17,
     E18,
     C19,D19,E19,C20,D20,E20,
@@ -902,9 +1045,6 @@ function compute(){
   };
 }
 
-// ===================================================================
-// RENDER
-// ===================================================================
 function el(id){return document.getElementById(id);}
 function setText(id,val){
   const e=el(id); if(!e) return;
@@ -928,7 +1068,6 @@ function populateSelects(){
   brandSel.appendChild(new Option('No Battery (Solar Only)','Only_Solar_PV_System'));
   const brands = [...new Set(DATA.combos.map(c=>c.brand))].sort();
   brands.forEach(b=>brandSel.appendChild(new Option(b,b)));
-
   populateBatteryCombos();
 
   const evSel = el('evCharger');
@@ -1083,6 +1222,118 @@ function showTab(name){
   document.querySelectorAll('.tabbtn').forEach(b=>b.classList.remove('active'));
   el('tab-'+name).classList.add('active');
   document.querySelector(`.tabbtn[data-tab="${name}"]`).classList.add('active');
+}
+
+// ===================================================================
+// PRINT APPROVAL — fills the Excel-style summary and triggers print
+// ===================================================================
+function printApprovalExcelStyle(){
+  const r = compute();
+
+  // Header
+  setText('ps_generated', 'Generated ' + new Date().toLocaleString('en-AU'));
+
+  // Left table
+  setText('ps_projectNo',   r.inp.projectNo || '—');
+  setText('ps_source',      r.inp.leadSource);
+  setText('ps_salesRep',    r.inp.salesRep || '—');
+  setText('ps_state',       r.B4 || '—');
+  setText('ps_postcode',    r.inp.postcode || '—');
+  setText('ps_distance',    r.inp.distance);
+  setText('ps_panelQty',
+    (r.inp.panelQty && r.panelWatt)
+      ? `${r.inp.panelQty} x ${r.panelWatt}W`
+      : 'No Panels');
+  setText('ps_panelBrand',  r.panelInfo ? r.panelInfo.Name : '—');
+  setText('ps_gridInv',     r.inp.gridInv === 'NA' ? 'NA' : r.inp.gridInv);
+  setText('ps_battBrand',
+    r.inp.battBrand === 'Only_Solar_PV_System' ? 'N/A' : r.inp.battBrand);
+  setText('ps_battCombo',   r.combo ? r.combo.combo : 'N/A');
+  setText('ps_blackout',    (getNum('ex_blackout') > 0) ? 'Yes' : 'NO');
+  setText('ps_storey',      r.inp.roofType);
+  setText('ps_phase',       '1');
+  setText('ps_roof',        'Tile');
+  setText('ps_splits',      Number(el('ex_splits')?.value) || 0);
+  setText('ps_terracotta',  (getNum('ex_terracotta') > 0) ? 'Yes' : 'NO');
+  setText('ps_ecd',         (getNum('ex_ecd') > 0) ? 'Yes' : 'N/A');
+  setText('ps_gsd',         (getNum('ex_gsd') > 0) ? 'Yes' : 'N/A');
+  setText('ps_cashPrice',   fmtMoney(r.D22));
+  setText('ps_deposit',     fmtMoney(r.inp.deposit));
+
+  const fin36 = r.finance.find(f => f.term === 36);
+  setText('ps_finance',
+    fin36 ? `${fmtMoney(fin36.purchaseTotal)} / 36 months (${fmtMoney(fin36.fortnightly)} fn)` : '—');
+  setText('ps_distributor', r.inp.distributor || '—');
+
+  // Cost breakdown
+  setText('ps_sysCost',     fmtMoney(r.E18));
+
+  setText('ps_q_panels',    r.inp.panelQty || 0);
+  setText('ps_p_panels',    fmtMoney(r.inp.panelPrice));
+  setText('ps_t_panels',    fmtMoney(r.E6));
+
+  setText('ps_q_grid',      r.inp.gridInv === 'NA' ? 0 : r.inp.gridQty);
+  setText('ps_p_grid',      r.inp.gridInv === 'NA' ? '—' : fmtMoney(r.E7 / Math.max(r.inp.gridQty,1)));
+  setText('ps_t_grid',      fmtMoney(r.E7));
+
+  setText('ps_q_hybrid',    r.inp.hybridInv === 'NA' ? 0 : r.inp.hybridQty);
+  setText('ps_p_hybrid',    r.inp.hybridInv === 'NA' ? '—' : fmtMoney(r.E8 / Math.max(r.inp.hybridQty,1)));
+  setText('ps_t_hybrid',    fmtMoney(r.E8));
+
+  setText('ps_q_batt',      r.inp.battQty || 0);
+  setText('ps_p_batt',      r.combo ? fmtMoney(r.combo.price) : '—');
+  setText('ps_t_batt',      fmtMoney(r.E9));
+
+  setText('ps_q_ev',        r.inp.evQty || 0);
+  setText('ps_p_ev',        r.inp.evCharger === 'NONE' ? '—' : fmtMoney(r.E_ev / Math.max(r.inp.evQty,1)));
+  setText('ps_t_ev',        fmtMoney(r.E_ev));
+
+  setText('ps_q_rack',      'kW ' + fmtNum(r.F1,2));
+  setText('ps_p_rack',      fmtMoney(r.inp.rackPrice) + '/kW');
+  setText('ps_t_rack',      fmtMoney(r.E11));
+
+  setText('ps_q_mkt',       'kW ' + fmtNum(r.F1 + r.D10,2));
+  setText('ps_p_mkt',       fmtMoney(r.inp.marketingRate) + '/kW');
+  setText('ps_t_mkt',       fmtMoney(r.E12));
+
+  setText('ps_q_admin',     '1');
+  setText('ps_p_admin',     fmtMoney(r.E13));
+  setText('ps_t_admin',     fmtMoney(r.E13));
+
+  setText('ps_q_extra',     '1');
+  setText('ps_p_extra',     fmtMoney(r.E14));
+  setText('ps_t_extra',     fmtMoney(r.E14));
+
+  setText('ps_q_elec',      'kW ' + fmtNum(r.F1,2));
+  setText('ps_p_elec',      fmtMoney(r.inp.electricalRate) + '/kW');
+  setText('ps_t_elec',      fmtMoney(r.E15));
+
+  setText('ps_q_solar',     'kW ' + fmtNum(r.C16,2));
+  setText('ps_p_solar',     fmtMoney(r.D16) + '/W');
+  setText('ps_t_solar',     fmtMoney(r.E16));
+
+  setText('ps_q_binst',     r.C17);
+  setText('ps_p_binst',     fmtMoney(r.D17));
+  setText('ps_t_binst',     fmtMoney(r.E17));
+
+  setText('ps_systemTotal', fmtMoney(r.E18));
+  setText('ps_stcTotal',    '− ' + fmtMoney(r.E19 + r.E20));
+  setText('ps_oop',         fmtMoney(r.D21));
+  setText('ps_crm',         fmtMoney(r.D23));
+  setText('ps_profit',      fmtMoney(r.D24) + ' (' + (r.D25*100).toFixed(1) + '%)');
+  const profitRow = el('ps_profitRow');
+  if (profitRow) profitRow.classList.toggle('loss', r.D24 < 0);
+  setText('ps_mktAdmin',    fmtMoney(r.E12 + r.E13));
+
+  // Activate print mode
+  document.body.classList.add('printing-summary');
+  const cleanup = () => {
+    document.body.classList.remove('printing-summary');
+    window.removeEventListener('afterprint', cleanup);
+  };
+  window.addEventListener('afterprint', cleanup);
+  window.print();
+  setTimeout(cleanup, 2500);
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -1266,7 +1517,6 @@ function setMode(mode){
   document.getElementById('btn-commercial').classList.toggle('active', mode==='commercial');
 }
 
-// Credit footer protection
 (function(){
   const CREDIT_TEXT = 'Sunboost Price Approval Made by Clay';
   const hosts = [
@@ -1275,14 +1525,14 @@ function setMode(mode){
   ];
   function ensureCredit(host){
     if (!host) return;
-    let el = host.querySelector(':scope > [data-clay-credit="true"]');
-    if (!el){
-      el = document.createElement('div');
-      el.className = 'clay-credit';
-      el.setAttribute('data-clay-credit', 'true');
-      host.appendChild(el);
+    let elx = host.querySelector(':scope > [data-clay-credit="true"]');
+    if (!elx){
+      elx = document.createElement('div');
+      elx.className = 'clay-credit';
+      elx.setAttribute('data-clay-credit', 'true');
+      host.appendChild(elx);
     }
-    if (el.textContent !== CREDIT_TEXT) el.textContent = CREDIT_TEXT;
+    if (elx.textContent !== CREDIT_TEXT) elx.textContent = CREDIT_TEXT;
   }
   hosts.forEach(ensureCredit);
   hosts.forEach(host => {
