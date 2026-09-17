@@ -51,6 +51,17 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
 .comp-price{font-weight:700;text-align:right;padding-top:7px;}
 .comp-sub{grid-column:2/3;font-size:10px;color:var(--muted);margin-top:2px;}
 
+/* Manual option buttons + dropdown layout */
+.sel-with-manual{ display:flex; gap:6px; align-items:stretch; }
+.sel-with-manual select{ flex:1; min-width:0; }
+.mini-manual{
+  background:#0d3a63; color:#fff; border:none;
+  padding:0 10px; border-radius:6px;
+  font-size:10.5px; font-weight:700; cursor:pointer;
+  white-space:nowrap; letter-spacing:.2px;
+}
+.mini-manual:hover{ background:#082846; }
+
 .extras-toggle-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px;}
 .extra-line{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#f7f9fb;border:1px solid var(--line);border-radius:7px;padding:7px 10px;}
 .extra-line .elabel{font-size:11.5px;font-weight:600;}
@@ -107,39 +118,15 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
 .apb-result.profit{background:#e7f6ef;border-color:#a8ddc4;color:#1a7a4c;}
 .apb-result.loss{background:#fdeeea;border-color:#f2b5a3;color:var(--red);}
 
-/* ---- Enhanced approval result banner (residential) ---- */
+/* Enhanced approval result banner (residential) */
 .apb-banner{
-  margin-top:18px;
-  padding:22px 26px;
-  border-radius:12px;
-  background:#eef1f4;
-  border:3px solid #cfd6de;
-  text-align:center;
+  margin-top:18px; padding:22px 26px; border-radius:12px;
+  background:#eef1f4; border:3px solid #cfd6de; text-align:center;
   transition:background .15s, border-color .15s;
 }
-.apb-banner-label{
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  color:#64758a;
-  margin-bottom:6px;
-}
-.apb-banner-value{
-  font-family:'Sora',sans-serif;
-  font-size:44px;
-  font-weight:800;
-  line-height:1.05;
-  letter-spacing:-0.5px;
-  color:#64758a;
-  margin:0 0 10px;
-}
-.apb-banner-detail{
-  font-size:16px;
-  font-weight:700;
-  color:#33475b;
-  line-height:1.45;
-}
+.apb-banner-label{ font-size:12px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:#64758a; margin-bottom:6px; }
+.apb-banner-value{ font-family:'Sora',sans-serif; font-size:44px; font-weight:800; line-height:1.05; letter-spacing:-0.5px; color:#64758a; margin:0 0 10px; }
+.apb-banner-detail{ font-size:16px; font-weight:700; color:#33475b; line-height:1.45; }
 .apb-banner-detail b{ color:#0d3a63; }
 
 .apb-banner.profit{ background:linear-gradient(120deg,#e7f6ef,#d2f0e0); border-color:#1f8f72; }
@@ -178,13 +165,8 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
 
 /* Credit footer (darker) */
 .clay-credit{
-  text-align:center;
-  font-size:11px;
-  color:#5a6470;
-  font-weight:600;
-  letter-spacing:.5px;
-  padding:16px 0 10px;
-  user-select:none;
+  text-align:center; font-size:11px; color:#5a6470; font-weight:600;
+  letter-spacing:.5px; padding:16px 0 10px; user-select:none;
 }
 
 .print-only-title{display:none;}
@@ -208,7 +190,6 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
 .print-summary{ display:none; }
 
 @media print{
-  /* When "printing-summary" is set, hide calculator UI and show the summary */
   body.printing-summary .topbar{ display:none !important; }
   body.printing-summary .tabbar{ display:none !important; }
   body.printing-summary .approve-bar{ display:none !important; }
@@ -217,82 +198,22 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
 
   body.printing-summary .print-summary{
     display:block !important;
-    padding:18px 22px;
-    max-width:920px;
-    margin:0 auto;
-    font-family:'Inter',sans-serif;
-    font-size:11.5px;
-    color:#1c2b39;
-    line-height:1.35;
+    padding:18px 22px; max-width:920px; margin:0 auto;
+    font-family:'Inter',sans-serif; font-size:11.5px; color:#1c2b39; line-height:1.35;
   }
+  .ps-header{ text-align:center; margin-bottom:14px; padding-bottom:8px; border-bottom:2px solid #0d3a63; }
+  .ps-title{ font-family:'Sora',sans-serif; font-size:18px; font-weight:800; color:#0d3a63; letter-spacing:.4px; }
+  .ps-sub{ font-size:10.5px; color:#64758a; margin-top:3px; }
 
-  .ps-header{
-    text-align:center;
-    margin-bottom:14px;
-    padding-bottom:8px;
-    border-bottom:2px solid #0d3a63;
-  }
-  .ps-title{
-    font-family:'Sora',sans-serif;
-    font-size:18px;
-    font-weight:800;
-    color:#0d3a63;
-    letter-spacing:.4px;
-  }
-  .ps-sub{
-    font-size:10.5px;
-    color:#64758a;
-    margin-top:3px;
-  }
+  .ps-table{ width:100%; border-collapse:collapse; margin-bottom:14px; }
+  .ps-table td{ padding:5px 10px; border:1px solid #cfd6de; vertical-align:middle; font-size:11.5px; }
+  .ps-label{ width:220px; font-weight:700; background:#f7f9fb; color:#0d3a63; }
+  .ps-cash td{ background:#fff8e0; font-weight:800; font-size:13.5px; }
+  .ps-cash-val{ text-align:right; color:#0d3a63; font-variant-numeric:tabular-nums; }
 
-  .ps-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-bottom:14px;
-  }
-  .ps-table td{
-    padding:5px 10px;
-    border:1px solid #cfd6de;
-    vertical-align:middle;
-    font-size:11.5px;
-  }
-  .ps-label{
-    width:220px;
-    font-weight:700;
-    background:#f7f9fb;
-    color:#0d3a63;
-  }
-  .ps-cash td{
-    background:#fff8e0;
-    font-weight:800;
-    font-size:13.5px;
-  }
-  .ps-cash-val{
-    text-align:right;
-    color:#0d3a63;
-    font-variant-numeric:tabular-nums;
-  }
-
-  .ps-cost{
-    width:100%;
-    border-collapse:collapse;
-    font-size:11px;
-    margin-top:8px;
-  }
-  .ps-cost th{
-    background:#0d3a63;
-    color:#fff;
-    padding:6px 8px;
-    font-size:10px;
-    text-transform:uppercase;
-    border:1px solid #0d3a63;
-    text-align:left;
-    letter-spacing:.3px;
-  }
-  .ps-cost td{
-    padding:4px 8px;
-    border:1px solid #cfd6de;
-  }
+  .ps-cost{ width:100%; border-collapse:collapse; font-size:11px; margin-top:8px; }
+  .ps-cost th{ background:#0d3a63; color:#fff; padding:6px 8px; font-size:10px; text-transform:uppercase; border:1px solid #0d3a63; text-align:left; letter-spacing:.3px; }
+  .ps-cost td{ padding:4px 8px; border:1px solid #cfd6de; }
   .ps-num{ text-align:right; font-variant-numeric:tabular-nums; }
   .ps-num-hero{ text-align:right; font-weight:800; font-size:14px; font-variant-numeric:tabular-nums; }
 
@@ -304,20 +225,8 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
   .ps-profit td{ background:#e7f6ef; color:#1a7a4c; font-weight:700; }
   .ps-profit.loss td{ background:#fdeeea; color:#c1401f; }
 
-  .ps-footer{
-    display:flex;
-    justify-content:space-between;
-    margin-top:26px;
-    padding-top:12px;
-    border-top:1px solid #cfd6de;
-    font-size:11px;
-    color:#33475b;
-  }
-
-  body.printing-summary .clay-credit{
-    display:block !important;
-    margin-top:14px;
-  }
+  .ps-footer{ display:flex; justify-content:space-between; margin-top:26px; padding-top:12px; border-top:1px solid #cfd6de; font-size:11px; color:#33475b; }
+  body.printing-summary .clay-credit{ display:block !important; margin-top:14px; }
 }
 </style>
 </head>
@@ -376,38 +285,61 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
       <h2><span class="ico">3</span>System Components</h2>
       <div class="comp-head"><div>Category</div><div>Product / Model</div><div style="text-align:right">Qty</div><div style="text-align:right">Price</div></div>
 
+      <!-- PANELS -->
       <div class="comp-row">
         <div class="comp-tag"><span class="swatch" style="background:#d98a3d"></span>Panels</div>
         <div class="comp-fields">
-          <select id="panelBrand"></select>
+          <div class="sel-with-manual">
+            <select id="panelBrand"></select>
+            <button type="button" class="mini-manual" onclick="addManualPanel()">➕ Manual</button>
+          </div>
           <div class="comp-subrow">
             <input readonly id="out_panelWatt" placeholder="Watt">
-            <input type="number" id="panelPrice" value="110" step="0.01">
+            <input type="number" id="panelPrice" value="0" step="0.01">
           </div>
         </div>
         <input type="number" id="panelQty" value="0" style="text-align:right;">
         <div class="comp-price" id="t_panels_total">$0</div>
       </div>
 
+      <!-- GRID INVERTER -->
       <div class="comp-row">
         <div class="comp-tag"><span class="swatch" style="background:#3a7bd5"></span>Grid Inv.</div>
-        <select id="gridInv"></select>
+        <div class="comp-fields">
+          <div class="sel-with-manual">
+            <select id="gridInv"></select>
+            <button type="button" class="mini-manual" onclick="addManualGridInv()">➕ Manual</button>
+          </div>
+        </div>
         <input type="number" id="gridQty" value="1" style="text-align:right;">
         <div class="comp-price" id="t_grid_total">$0</div>
       </div>
 
+      <!-- HYBRID INVERTER -->
       <div class="comp-row">
         <div class="comp-tag"><span class="swatch" style="background:#8a3ad5"></span>Hybrid Inv.</div>
-        <select id="hybridInv"></select>
+        <div class="comp-fields">
+          <div class="sel-with-manual">
+            <select id="hybridInv"></select>
+            <button type="button" class="mini-manual" onclick="addManualHybridInv()">➕ Manual</button>
+          </div>
+        </div>
         <input type="number" id="hybridQty" value="1" style="text-align:right;">
         <div class="comp-price" id="t_hybrid_total">$0</div>
       </div>
 
+      <!-- BATTERY -->
       <div class="comp-row">
         <div class="comp-tag"><span class="swatch" style="background:#1f8f72"></span>Battery</div>
         <div class="comp-fields">
-          <select id="battBrand"></select>
-          <select id="battCombo"></select>
+          <div class="sel-with-manual">
+            <select id="battBrand"></select>
+            <button type="button" class="mini-manual" onclick="addManualBatteryBrand()">➕ Manual</button>
+          </div>
+          <div class="sel-with-manual">
+            <select id="battCombo"></select>
+            <button type="button" class="mini-manual" onclick="addManualBatteryCombo()">➕ Manual</button>
+          </div>
           <div class="comp-sub" id="battCapNote"></div>
         </div>
         <input type="number" id="battQty" value="1" style="text-align:right;">
@@ -415,6 +347,7 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
       </div>
       <input type="hidden" id="t_batt_kw"><input type="hidden" id="t_batt_usable">
 
+      <!-- EV CHARGER -->
       <div class="comp-row">
         <div class="comp-tag"><span class="swatch" style="background:#d9433a"></span>EV Charger</div>
         <select id="evCharger"></select>
@@ -739,10 +672,7 @@ input[readonly]{background:#f3f5f7;border-color:var(--line);color:#33475b;font-w
 </div>
 
 
-<!-- ================================================================
-     PRINT-ONLY EXCEL-STYLE APPROVAL SUMMARY
-     Only visible when printApprovalExcelStyle() is called.
-     ================================================================ -->
+<!-- PRINT-ONLY EXCEL-STYLE APPROVAL SUMMARY -->
 <div id="print-summary" class="print-summary">
   <div class="ps-header">
     <div class="ps-title">Deal Approval Summary</div>
@@ -885,6 +815,112 @@ function qldZoneRate(pc){
   return matched ? total : 0;
 }
 
+// ===================================================================
+// MANUAL PRODUCT ENTRY
+// ===================================================================
+function _promptNumber(msg, defaultVal){
+  const raw = prompt(msg, defaultVal !== undefined ? defaultVal : '');
+  if (raw === null) return null;
+  const n = parseFloat(raw);
+  if (isNaN(n)) return null;
+  return n;
+}
+function _promptText(msg, defaultVal){
+  const raw = prompt(msg, defaultVal !== undefined ? defaultVal : '');
+  if (raw === null) return null;
+  return raw.trim();
+}
+
+function addManualPanel(){
+  const name  = _promptText('Panel name / model:', 'Manual Panel');
+  if (!name) return;
+  const watt  = _promptNumber('Panel wattage (W):', 475);
+  if (watt === null || watt <= 0) return alert('Watt must be a positive number.');
+  const price = _promptNumber('Panel price per unit ($):', 110);
+  if (price === null || price < 0) return alert('Price must be a number.');
+
+  const entry = { Brand: 'Manual', Name: name, Watt: watt, Price: price };
+  DATA.panels.push(entry);
+
+  const sel = el('panelBrand');
+  const opt = new Option(`${name} — $${price.toFixed(2)}/W`, name);
+  sel.appendChild(opt);
+  sel.value = name;
+  el('panelPrice').value = price;
+  renderAll();
+}
+
+function addManualGridInv(){
+  const name  = _promptText('Grid inverter name / model:', 'Manual Grid Inverter');
+  if (!name) return;
+  const price = _promptNumber('Grid inverter price ($):', 550);
+  if (price === null || price < 0) return alert('Price must be a number.');
+
+  DATA.grid.push({ name: name, ratedac: 0, phase: 1, mppt: 1, price: price });
+
+  const sel = el('gridInv');
+  const opt = new Option(`${name} ($${price.toFixed(2)})`, name);
+  sel.appendChild(opt);
+  sel.value = name;
+  renderAll();
+}
+
+function addManualHybridInv(){
+  const name  = _promptText('Hybrid inverter name / model:', 'Manual Hybrid Inverter');
+  if (!name) return;
+  const price = _promptNumber('Hybrid inverter price ($):', 1500);
+  if (price === null || price < 0) return alert('Price must be a number.');
+
+  DATA.hybrid.push({ name: name, ratedac: '—', phase: 1, mppt: 1, price: price });
+
+  const sel = el('hybridInv');
+  const opt = new Option(`${name} ($${price.toFixed(2)})`, name);
+  sel.appendChild(opt);
+  sel.value = name;
+  renderAll();
+}
+
+function addManualBatteryBrand(){
+  const name = _promptText('Battery brand name:', 'Manual Brand');
+  if (!name) return;
+
+  const brandSel = el('battBrand');
+  if (![...brandSel.options].some(o => o.value === name)){
+    const opt = new Option(name, name);
+    brandSel.appendChild(opt);
+  }
+  brandSel.value = name;
+  populateBatteryCombos();
+
+  addManualBatteryCombo();
+}
+
+function addManualBatteryCombo(){
+  const brand = el('battBrand').value;
+  if (!brand || brand === 'Only_Solar_PV_System'){
+    return alert('Select or create a battery brand first.');
+  }
+  const combo = _promptText('Battery combo / model name:', 'Manual Combo');
+  if (!combo) return;
+  const price  = _promptNumber('Battery combo price ($):', 8000);
+  if (price === null || price < 0) return alert('Price must be a number.');
+  const kw     = _promptNumber('Battery capacity (kW):', 10);
+  if (kw === null || kw < 0) return alert('kW must be a number.');
+  const usable = _promptNumber('Battery usable capacity (kWh):', 9);
+  if (usable === null || usable < 0) return alert('Usable kWh must be a number.');
+
+  DATA.combos.push({ brand: brand, combo: combo, price: price, kw: kw, usable: usable });
+
+  const comboSel = el('battCombo');
+  const opt = new Option(`${combo} — $${price.toFixed(2)}`, combo);
+  comboSel.appendChild(opt);
+  comboSel.value = combo;
+  renderAll();
+}
+
+// ===================================================================
+// INPUTS + COMPUTE
+// ===================================================================
 function readInputs(){
   const g = id => document.getElementById(id);
   return {
@@ -936,18 +972,21 @@ function compute(){
   const E7 = inp.gridInv==='NA' ? 0 : gridInvPrice(inp.gridInv) * inp.gridQty;
   const E8 = inp.hybridInv==='NA' ? 0 : roundup(hybridInvPrice(inp.hybridInv) * inp.hybridQty, 0);
 
-  const isOnlySolar = /Only_Solar/i.test(inp.battBrand) || inp.battCombo==='Only Solar PV System';
-  const combo = isOnlySolar ? null : comboLookup(inp.battCombo);
-  const D10 = isOnlySolar ? 0 : (combo ? combo.kw : 0);
-  const E10 = isOnlySolar ? 0 : (combo ? combo.usable : 0);
-  const E9 = roundup((isOnlySolar ? 0 : (combo ? combo.price : 0)) * inp.battQty, 0);
+  const isOnlySolar =
+    !inp.battBrand ||
+    /Only_Solar/i.test(inp.battBrand) ||
+    inp.battCombo==='Only Solar PV System';
+  const combo = (isOnlySolar || !inp.battCombo) ? null : comboLookup(inp.battCombo);
+  const D10 = (isOnlySolar || !combo) ? 0 : combo.kw;
+  const E10 = (isOnlySolar || !combo) ? 0 : combo.usable;
+  const E9 = roundup((isOnlySolar || !combo ? 0 : combo.price) * inp.battQty, 0);
 
   const evPriceEach = inp.evCharger==='NONE' ? 0 : evChargerPrice(inp.evCharger);
   const E_ev = roundup(evPriceEach * inp.evQty, 0);
 
   const exRow = extrasRow(B4);
   const F5 = (inp.roofType==='Single Storey' || inp.roofType==='Only Battery') ? 0 : (exRow ? exRow[3] : 0);
-  const F10 = (inp.distance>100 && F1 > 0 && ['NSW','SA','WA','VIC'].includes(B4)) ? inp.distance : 0;
+  const F10 = (inp.distance>100 && inp.panelQty > 0 && ['NSW','SA','WA','VIC'].includes(B4)) ? inp.distance : 0;
   const F16 = (D10===0) ? 0 : (jobChargeDistance(inp.postcode) || 0);
   const F18 = B4==='QLD' ? Math.round(qldZoneRate(inp.postcode) * F1) : 0;
   const F20 = (inp.coupledType==='New System' || inp.coupledType==='AC Coupled') ? 0 : (exRow ? exRow[4] : 0);
@@ -987,11 +1026,11 @@ function compute(){
   const E16 = roundup((D16*1000)*installKWBasis, 0);
 
   const D17 = (isOnlySolar || D10===0) ? 0 : (rateRow ? (E10<=35 ? rateRow[3] : rateRow[4]) : 0);
-  const C17 = inp.battQty || (isOnlySolar?0:1);
+  const C17 = isOnlySolar ? 0 : 1;
   const E17 = roundup(C17 * D17, 0);
 
-  const E14 = F5+F10+F16+F18+F20+manualExtrasTotal;
-  const E18 = E6+E7+E8+E9+E_ev+E11+E12+E13+E14+E15+E16+E17;
+  const E14 = F5+F10+F16+F18+F20+manualExtrasTotal + E_ev;
+  const E18 = E6+E7+E8+E9+E11+E12+E13+E14+E15+E16+E17;
 
   const C19 = rounddown(B3 * F1 * 5, 0);
   const D19 = inp.panelStcPrice;
@@ -1053,28 +1092,50 @@ function setText(id,val){
 }
 
 function populateSelects(){
+  // Panels — placeholder
   const panelSel = el('panelBrand');
-  DATA.panels.forEach(p=>{ const o=document.createElement('option'); o.value=p.Name; o.textContent=`${p.Name} — ${fmtMoney(p.Price)}/W`; panelSel.appendChild(o); });
+  panelSel.innerHTML = '';
+  panelSel.appendChild(new Option('— Select Panel —', ''));
+  DATA.panels.forEach(p=>{
+    const o=document.createElement('option');
+    o.value=p.Name;
+    o.textContent=`${p.Name} — ${fmtMoney(p.Price)}/W`;
+    panelSel.appendChild(o);
+  });
+  panelSel.value = '';
 
+  // Grid inverter — placeholder
   const gridSel = el('gridInv');
-  gridSel.appendChild(new Option('NA','NA'));
+  gridSel.innerHTML = '';
+  gridSel.appendChild(new Option('— Select Grid Inverter —', 'NA'));
   DATA.grid.forEach(g=>gridSel.appendChild(new Option(`${g.name} (${fmtMoney(g.price)})`, g.name)));
 
+  // Hybrid inverter — placeholder
   const hybSel = el('hybridInv');
-  hybSel.appendChild(new Option('NA','NA'));
+  hybSel.innerHTML = '';
+  hybSel.appendChild(new Option('— Select Hybrid Inverter —', 'NA'));
   DATA.hybrid.forEach(h=>hybSel.appendChild(new Option(`${h.name} (${fmtMoney(h.price)})`, h.name)));
 
+  // Battery brand — placeholder
   const brandSel = el('battBrand');
+  brandSel.innerHTML = '';
+  brandSel.appendChild(new Option('— Select Battery Brand —', ''));
   brandSel.appendChild(new Option('No Battery (Solar Only)','Only_Solar_PV_System'));
   const brands = [...new Set(DATA.combos.map(c=>c.brand))].sort();
   brands.forEach(b=>brandSel.appendChild(new Option(b,b)));
+  brandSel.value = '';
+
   populateBatteryCombos();
 
+  // EV charger
   const evSel = el('evCharger');
-  evSel.appendChild(new Option('None','NONE'));
+  evSel.innerHTML = '';
+  evSel.appendChild(new Option('— None —','NONE'));
   DATA.ev.forEach(e=>evSel.appendChild(new Option(`${e.name} (${fmtMoney(e.price)})`, e.name)));
 
+  // STC period
   const stcSel = el('stcYear');
+  stcSel.innerHTML = '';
   DATA.batteryYear.forEach(([label])=>stcSel.appendChild(new Option(label,label)));
   stcSel.value = '2026 May-Dec';
 }
@@ -1083,13 +1144,23 @@ function populateBatteryCombos(){
   const brand = el('battBrand').value;
   const comboSel = el('battCombo');
   comboSel.innerHTML='';
+
+  if (!brand){
+    comboSel.appendChild(new Option('— Select brand first —',''));
+    comboSel.disabled = true;
+    return;
+  }
   if (brand==='Only_Solar_PV_System'){
-    comboSel.appendChild(new Option('Select brand first','Only Solar PV System'));
+    comboSel.appendChild(new Option('— No Battery —','Only Solar PV System'));
     comboSel.disabled = true;
     return;
   }
   comboSel.disabled = false;
   const items = DATA.combos.filter(c=>c.brand===brand).sort((a,b)=>a.combo.localeCompare(b.combo));
+  if (items.length === 0){
+    comboSel.appendChild(new Option('— No combos, click ➕ Manual —',''));
+    return;
+  }
   items.forEach(c=>comboSel.appendChild(new Option(`${c.combo} — ${fmtMoney(c.price)}`, c.combo)));
 }
 
@@ -1174,9 +1245,9 @@ function renderAll(){
   setText('a_zonerating', `Zone ${r.B2 || '—'} / ${fmtNum(r.B3,3)}`);
   setText('a_systemSize', fmtNum(r.F1)+' kW');
   setText('a_panels', r.inp.panelQty ? `${r.inp.panelQty} × ${r.panelWatt}W` : 'No Panels');
-  setText('a_gridInv', r.inp.gridInv);
-  setText('a_hybridInv', r.inp.hybridInv);
-  setText('a_battBrand', r.inp.battBrand==='Only_Solar_PV_System' ? 'N/A' : r.inp.battBrand);
+  setText('a_gridInv', r.inp.gridInv === 'NA' ? 'NA' : (r.inp.gridInv || '—'));
+  setText('a_hybridInv', r.inp.hybridInv === 'NA' ? 'NA' : (r.inp.hybridInv || '—'));
+  setText('a_battBrand', (!r.inp.battBrand || r.inp.battBrand==='Only_Solar_PV_System') ? 'N/A' : r.inp.battBrand);
   setText('a_battCombo', r.combo ? r.combo.combo : 'N/A');
   setText('a_battCap', r.E10 ? fmtNum(r.E10,2)+' kWh' : 'N/A');
   setText('a_storey', r.inp.roofType);
@@ -1189,7 +1260,7 @@ function renderAll(){
   setText('a_netProfit', fmtMoney(r.D24)+' ('+(r.D25*100).toFixed(1)+'%)');
   setText('a_totalStc', fmtMoney(r.E19+r.E20));
 
-  // ---- Requested Approval Price box (enhanced banner) ----
+  // Approval banner
   setText('a_calcCost', fmtMoney(r.D21));
   const apInput   = el('approvalPrice');
   const banner    = el('apb_banner');
@@ -1230,10 +1301,8 @@ function showTab(name){
 function printApprovalExcelStyle(){
   const r = compute();
 
-  // Header
   setText('ps_generated', 'Generated ' + new Date().toLocaleString('en-AU'));
 
-  // Left table
   setText('ps_projectNo',   r.inp.projectNo || '—');
   setText('ps_source',      r.inp.leadSource);
   setText('ps_salesRep',    r.inp.salesRep || '—');
@@ -1245,9 +1314,9 @@ function printApprovalExcelStyle(){
       ? `${r.inp.panelQty} x ${r.panelWatt}W`
       : 'No Panels');
   setText('ps_panelBrand',  r.panelInfo ? r.panelInfo.Name : '—');
-  setText('ps_gridInv',     r.inp.gridInv === 'NA' ? 'NA' : r.inp.gridInv);
+  setText('ps_gridInv',     r.inp.gridInv === 'NA' ? 'NA' : (r.inp.gridInv || 'NA'));
   setText('ps_battBrand',
-    r.inp.battBrand === 'Only_Solar_PV_System' ? 'N/A' : r.inp.battBrand);
+    (!r.inp.battBrand || r.inp.battBrand === 'Only_Solar_PV_System') ? 'N/A' : r.inp.battBrand);
   setText('ps_battCombo',   r.combo ? r.combo.combo : 'N/A');
   setText('ps_blackout',    (getNum('ex_blackout') > 0) ? 'Yes' : 'NO');
   setText('ps_storey',      r.inp.roofType);
@@ -1265,7 +1334,6 @@ function printApprovalExcelStyle(){
     fin36 ? `${fmtMoney(fin36.purchaseTotal)} / 36 months (${fmtMoney(fin36.fortnightly)} fn)` : '—');
   setText('ps_distributor', r.inp.distributor || '—');
 
-  // Cost breakdown
   setText('ps_sysCost',     fmtMoney(r.E18));
 
   setText('ps_q_panels',    r.inp.panelQty || 0);
@@ -1325,7 +1393,6 @@ function printApprovalExcelStyle(){
   if (profitRow) profitRow.classList.toggle('loss', r.D24 < 0);
   setText('ps_mktAdmin',    fmtMoney(r.E12 + r.E13));
 
-  // Activate print mode
   document.body.classList.add('printing-summary');
   const cleanup = () => {
     document.body.classList.remove('printing-summary');
@@ -1341,6 +1408,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   el('panelBrand').addEventListener('change', ()=>{
     const p = DATA.panels.find(x=>x.Name===el('panelBrand').value);
     if (p) el('panelPrice').value = p.Price;
+    else if (!el('panelBrand').value) el('panelPrice').value = 0;
     renderAll();
   });
   el('battBrand').addEventListener('change', ()=>{ populateBatteryCombos(); renderAll(); });
